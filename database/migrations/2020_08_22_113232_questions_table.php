@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class MassagecoursesTable extends Migration
+class QuestionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class MassagecoursesTable extends Migration
      */
     public function up()
     {
-        Schema::create('massagecourse', function (Blueprint $table) {
+        Schema::create('questions', function (Blueprint $table) {
           $table->increments('id');
-          $table->string('name');
+          $table->string('question');
         });
     }
+
     /**
      * Reverse the migrations.
      *
@@ -25,6 +26,6 @@ class MassagecoursesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('massagecourse');
+        Schema::dropIfExists('questions');
     }
 }

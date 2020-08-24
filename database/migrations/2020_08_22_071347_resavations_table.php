@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class ClientsTable extends Migration
+class ResavationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,17 @@ class ClientsTable extends Migration
      */
     public function up()
     {
-        Schema::create('clients', function (Blueprint $table){
+        Schema::create('resavations', function (Blueprint $table) {
           $table->increments('id');
           $table->string('name');
           $table->string('sex');
-          $table->string('job');
-          $table->string('birthday');
           $table->string('age');
-          $table->string('domicile');
           $table->string('phonenumber');
           $table->string('e-mail');
-          $table->string('remarks');
-          $table->string('symptom');
           $table->string('course_id');
+          $table->string('resavation datatime');
+          $table->string('symption');
+          $table->string('status');
         });
     }
 
@@ -36,6 +34,6 @@ class ClientsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('clients');
+        Schema::dropIfExists('resavations');
     }
 }

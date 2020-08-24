@@ -13,7 +13,7 @@ class AnswersTable extends Migration
      */
     public function up()
     {
-        Schema::create('answer', function (Blueprint $table) {
+        Schema::create('answers', function (Blueprint $table) {
           $table->increments('id');
           $table->string('answer');
           $table->string('client_id');
@@ -28,6 +28,6 @@ class AnswersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('answer');
+        Schema::dropIfExists('answers');
     }
 }
