@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Resevation</title>
+  </head>
+  <body>
+    <h1>予約画面</h1>
 @extends('layouts.admin')
 @section('title','予約フォーム')
 
@@ -6,7 +17,7 @@
       <div class="row">
         <div class="col-md-8 mx-auto">
           <h2>予約フォーム</h2>
-          <form action="{{ action('Admin\ResavationController@create') }}"
+          <form action="{{ action('Admin\ResevationController@create') }}"
           method="post" enctype="multipart/form-data">
 
             @if (count($errors) > 0)
@@ -69,4 +80,6 @@
         </div>
       </div>
     </div>
-@endsection
+    @endsection
+  </body>
+</html>
