@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class ResevationsTable extends Migration
+class ReservationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class ResevationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('resevations', function (Blueprint $table) {
+        Schema::create('reservations', function (Blueprint $table) {
           $table->increments('id');
           $table->string('name');
           $table->string('sex');
@@ -21,7 +21,7 @@ class ResevationsTable extends Migration
           $table->string('phonenumber');
           $table->string('e-mail');
           $table->string('course_id');
-          $table->string('resevation datatime');
+          $table->string('reservation datatime');
           $table->string('symption');
           $table->string('status');
         });
@@ -34,6 +34,6 @@ class ResevationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('resevations');
+        Schema::dropIfExists('reservations');
     }
 }

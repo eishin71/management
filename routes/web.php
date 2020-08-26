@@ -12,16 +12,14 @@
 */
 
 Route::group(['prefix' => 'admin','middleware' => 'auth'],function () {
-    Route::get('resevation/create', 'Admin\ResevationController@add');
-    Route::post('resevation/create', 'Admin\ResevationController@create');
-    Route::get('resevation', 'Admin\ResevationController@index');
-    Route::get('resevation/edit', 'Admin\ResevationController@edit');
-    Route::post('resevation/edit', 'Admin\ResevationController@update');
-    Route::get('resevation/delete', 'Admin\ResevationController@delete');
+    Route::get('reservation/create', 'Admin\ReservationController@add');
+    Route::post('reservation/create', 'Admin\ReservationController@create');
+    Route::get('reservation', 'Admin\ReservationController@index');
+    Route::get('reservation/edit', 'Admin\ReservationController@edit');
+    Route::post('reservation/edit', 'Admin\ReservationController@update');
+    Route::get('reservation/delete', 'Admin\ReservationController@delete');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/', 'ResevationController@index');
