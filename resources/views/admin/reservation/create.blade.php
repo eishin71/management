@@ -58,7 +58,7 @@
               </div>
             </div>
             <div class="form-group row">
-              <label class="col-md-2">予約希望日</label>
+              <label class="col-md-2">予約希望日時</label>
               <div class="col-md-10">
                 <input rype="text" class="form-control" name="date" value="{{ old('date') }}">
               </div>
