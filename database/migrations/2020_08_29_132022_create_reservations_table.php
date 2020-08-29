@@ -20,9 +20,9 @@ class ReservationsTable extends Migration
           $table->string('age');
           $table->string('phonenumber');
           $table->string('e-mail');
-          $table->string('course');
           $table->string('date');
-          $table->string('symption');
+          $table->string('course');
+          $table->string('sympton');
         });
     }
 
