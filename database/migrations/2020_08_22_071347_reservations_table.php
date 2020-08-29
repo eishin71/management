@@ -14,16 +14,15 @@ class ReservationsTable extends Migration
     public function up()
     {
         Schema::create('reservations', function (Blueprint $table) {
-          $table->increments('id');
+          $table->bigIncrements('id');
           $table->string('name');
           $table->string('sex');
           $table->string('age');
           $table->string('phonenumber');
           $table->string('e-mail');
-          $table->string('course_id');
-          $table->string('reservation datatime');
+          $table->string('course');
+          $table->string('date');
           $table->string('symption');
-          $table->string('status');
         });
     }
 

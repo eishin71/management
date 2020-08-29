@@ -8,7 +8,7 @@ class Reservation extends Model
 {
     protected $guarded = array('id');
 
-    public atatic $rules = array(
+    public static $rules = array(
       'name' => 'required',
       'sex' => 'required',
       'age' => 'required',

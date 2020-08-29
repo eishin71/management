@@ -18,7 +18,7 @@ class ReservationController extends Controller
       $this->validate($request,Reservation::$rules);
       $reservation = new Reservation;
       $form = $request->all();
-      unset($sorm['_token']);
+      unset($form['_token']);
 
       $reservation->fill($form);
       $reservation->save();
