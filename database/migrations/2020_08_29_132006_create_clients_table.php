@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class ClientsTable extends Migration
+class CreateClientsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -26,6 +26,7 @@ class ClientsTable extends Migration
           $table->string('remarks');
           $table->string('symptom');
           $table->string('course_id');
+          $table->timestamps();
         });
     }
 

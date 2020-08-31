@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AnswersTable extends Migration
+class CreateAnswersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -18,6 +18,7 @@ class AnswersTable extends Migration
           $table->string('answer');
           $table->string('client_id');
           $table->string('inteview_sheet_id');
+          $table->timestamps();
         });
     }
 

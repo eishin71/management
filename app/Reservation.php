@@ -13,7 +13,7 @@ class Reservation extends Model
       'sex' => 'required',
       'age' => 'required',
       'phonenumber' => 'required',
-      'e-mail' => 'required',
+      'mail' => 'required',
       'date' => 'required',
       'course' => 'required',
       'symptom' => 'required',

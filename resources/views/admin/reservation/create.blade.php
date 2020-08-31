@@ -45,7 +45,7 @@
             <div class="form-group row">
               <label class="col-md-2">e-mail</label>
               <div class="col-md-10">
-                <input type="text" class="form-control" name="e-mail" value="{{ old('e-mail') }}">
+                <input type="text" class="form-control" name="mail" value="{{ old('mail') }}">
               </div>
             </div>
             <div class="form-group row">

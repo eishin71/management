@@ -13,7 +13,7 @@
             <div class="col-md-8">
                 <form action="{{ action('Admin\ReservationController@index') }}" method="get">
                     <div class="form-group row">
-                        <label class="col-md-2">タイトル</label>
+                        <label class="col-md-2"></label>
                         <div class="col-md-8">
                             <input type="text" class="form-control" name="cond_title" value="{{ $cond_title }}">
                         </div>
@@ -31,14 +31,15 @@
                     <table class="table table-dark">
                         <thead>
                             <tr>
+                                <th width="2%">ID</th>
                                 <th width="10%">名前</th>
                                 <th width="5%">年齢</th>
                                 <th width="5%">性別</th>
                                 <th width="10%">電話番号</th>
-                                <th width="10%">e-mail</th>
+                                <th width="15%">e-mail</th>
                                 <th width="15%">コース</th>
                                 <th width="15%">予約希望日時</th>
-                                <th width="30%">症状</th>
+                                <th width="20%">症状</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -49,7 +50,7 @@
                                     <td>{{ str_limit($reservation->age, 10) }}</td>
                                     <td>{{ str_limit($reservation->sex, 10) }}</td>
                                     <td>{{ str_limit($reservation->phonenumber, 15) }}</td>
-                                    <td>{{ str_limit($reservation->e-mail, 20) }}</td>
+                                    <td>{{ str_limit($reservation->mail, 30) }}</td>
                                     <td>{{ str_limit($reservation->course, 20) }}</td>
                                     <td>{{ str_limit($reservation->data, 20) }}</td>
                                     <td>{{ str_limit($reservation->symptom, 250) }}</td>

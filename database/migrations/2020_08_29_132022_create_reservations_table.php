@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class ReservationsTable extends Migration
+class CreateReservationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -19,10 +19,11 @@ class ReservationsTable extends Migration
           $table->string('sex');
           $table->string('age');
           $table->string('phonenumber');
-          $table->string('e-mail');
+          $table->string('mail');
           $table->string('date');
           $table->string('course');
-          $table->string('sympton');
+          $table->string('symptom');
+          $table->timestamps();
         });
     }
 
