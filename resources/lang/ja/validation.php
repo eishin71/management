@@ -150,9 +150,9 @@ return [
       'sex' => '性別',
       'age' => '年齢',
       'phonenumber' => '電話番号',
-      'e-mail' => 'e-mail',
+      'mail' => 'e-mail',
       'date' => '予約希望日時',
-      'course' => 'コース',
+      'course_id' => 'コース',
       'symptom' => '症状',
     ],
 

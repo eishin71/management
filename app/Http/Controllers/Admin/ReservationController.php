@@ -5,12 +5,15 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Reservation;
+use App\Course;
 
 class ReservationController extends Controller
 {
     public function add()
     {
-      return view('admin.reservation.create');
+      //コース一覧を入れておく変数
+      $courses = Course::all();
+      return view('admin.reservation.create',compact('courses'));
     }
 
     public function create(Request $request)
@@ -21,6 +24,10 @@ class ReservationController extends Controller
       unset($form['_token']);
 
       $reservation->fill($form);
+      //症状がない場合、からのデータを送る
+      if ($reservation->symptom == null){
+        $reservation->symptom = '';
+      }
       $reservation->save();
 
       return redirect('admin/reservation/create');

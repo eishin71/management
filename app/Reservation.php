@@ -15,7 +15,7 @@ class Reservation extends Model
       'phonenumber' => 'required',
       'mail' => 'required',
       'date' => 'required',
-      'course' => 'required',
-      'symptom' => 'required',
+      'course_id' => 'required',
+      'symptom' => '',
     );
 }

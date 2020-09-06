@@ -51,13 +51,16 @@
             <div class="form-group row">
               <label class="col-md-2">予約希望日時</label>
               <div class="col-md-10">
-                <input type="text" class="form-control" name="date" value="{{ old('date') }}">
+                <input type="datetime-local" class="form-control" name="date" value="{{ old('date') }}">
               </div>
             </div>
             <div class="form-group row">
               <label class="col-md-2">コース</label>
               <div class="col-md-10">
-                <input type="text" class="form-control" name="course" value="{{ old('course') }}">
+                <select　name="course_id">
+                  @foreach ($courses as $c)
+                    <option value="{{ $c->id}}">{{ $c->name }}</option>
+                  @endforeach
               </div>
             </div>
             <div class="form-group row">

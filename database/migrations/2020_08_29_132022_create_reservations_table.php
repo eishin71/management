@@ -20,8 +20,8 @@ class CreateReservationsTable extends Migration
           $table->string('age');
           $table->string('phonenumber');
           $table->string('mail');
-          $table->string('date');
-          $table->string('course');
+          $table->datetime('date');
+          $table->integer('course_id');
           $table->string('symptom');
           $table->timestamps();
         });
