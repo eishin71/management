@@ -18,6 +18,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'],function () {
     Route::get('reservation/edit', 'Admin\ReservationController@edit');
     Route::post('reservation/edit', 'Admin\ReservationController@update');
     Route::get('reservation/delete', 'Admin\ReservationController@delete');
+    Route::get('reservation/{id}', 'Admin\ReservationController@show');
 });
 
 Auth::routes();

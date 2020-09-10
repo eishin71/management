@@ -45,7 +45,11 @@
                         <tbody>
                             @foreach($posts as $reservation)
                                 <tr>
-                                    <th>{{ $reservation->id }}</th>
+                                    <th>
+                                      <a href="{{ action('Admin\ReservationController@show', ['id' => $reservation->id]) }}">
+                                      {{ $reservation->id }}
+                                      </a>
+                                    </th>
                                     <td>{{ str_limit($reservation->name, 20) }}</td>
                                     <td>{{ str_limit($reservation->age, 10) }}</td>
                                     <td>{{ str_limit($reservation->sex, 10) }}</td>

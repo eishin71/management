@@ -72,4 +72,11 @@ class ReservationController extends Controller
       $reservation->delete();
       return redirect('admin/reservation/');
     }
+
+    public function show(Request $request, $id)
+    {
+      $id = $request->id;
+      $posts = Reservation::where('id', $id)->get();
+      return view('admin.reservation.show',['posts' => $posts, 'id' => $id]);
+    }
 }
