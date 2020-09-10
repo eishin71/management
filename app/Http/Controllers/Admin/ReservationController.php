@@ -75,8 +75,7 @@ class ReservationController extends Controller
 
     public function show(Request $request, $id)
     {
-      $id = $request->id;
-      $posts = Reservation::where('id', $id)->get();
-      return view('admin.reservation.show',['posts' => $posts, 'id' => $id]);
+      $r = Reservation::find($id);
+      return view('admin.reservation.show',['r' => $r, 'id' => $id]);
     }
 }
