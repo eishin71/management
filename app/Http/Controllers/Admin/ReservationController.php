@@ -78,4 +78,10 @@ class ReservationController extends Controller
       $r = Reservation::find($id);
       return view('admin.reservation.show',['r' => $r, 'id' => $id]);
     }
+
+    public function update_status(Request $request,$id)
+    {
+      DB::table('reservations')->where('id',1)->update(['status' => 予約確定]);
+      return redirect('admin/reservation/');
+    }
 }

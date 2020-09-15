@@ -13,11 +13,10 @@
       </div>
       <div class="row">
         <div class="col-md-4">
-          <form action="{{ action('Admin\ReservationController@create') }}"
+          <form action="{{ action('Admin\ReservationController@update_status' }}"
           method="post" enctype="multipart/form-data">
 
             {{ csrf_field() }}
-            <input type="hidden" value="確定">
             <input type="submit" class="btn btn-primary" value="予約確定">
           </form>
         </div>
