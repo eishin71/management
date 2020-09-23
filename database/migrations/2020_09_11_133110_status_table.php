@@ -14,7 +14,7 @@ class StatusTable extends Migration
     public function up()
     {
         Schema::table('reservations', function (Blueprint $table) {
-            $table->string('status');
+            $table->string('status')->nullable();
         });
     }
 

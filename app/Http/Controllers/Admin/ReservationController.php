@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Reservation;
 use App\Course;
+use Carbon\Carbon;
 
 class ReservationController extends Controller
 {
@@ -23,6 +24,7 @@ class ReservationController extends Controller
       $form = $request->all();
       unset($form['_token']);
 
+      $form['date'] = new Carbon($form['date']);
       $reservation->fill($form);
       //症状がない場合、からのデータを送る
       if ($reservation->symptom == null){
@@ -81,7 +83,15 @@ class ReservationController extends Controller
 
     public function update_status(Request $request,$id)
     {
-      DB::table('reservations')->where('id',1)->update(['status' => 予約確定]);
+      Reservation::find($id)->update(['status' => '予約確定']);
       return redirect('admin/reservation/');
     }
+
+    public function remove(Request $request,$id)
+    {
+      Reservation::find($id)->delete();
+      return redirect('admin/reservation/');
+    }
+    //find = 0,1
+    //where =複数　foreachを使う時など
 }

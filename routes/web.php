@@ -20,7 +20,11 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'],function () {
     Route::get('reservation/delete', 'Admin\ReservationController@delete');
     Route::get('reservation/{id}', 'Admin\ReservationController@show');
     Route::post('reservation/{id}/update_status','Admin\ReservationController@update_status');
+    Route::post('reservation/{id}/remove','Admin\ReservationController@remove');
+    Route::get('course/create','Admin\CourseController@add');
+    Route::post('course/create','Admin\CourseController@create');
 });
+
 
 Auth::routes();
 
