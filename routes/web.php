@@ -23,6 +23,10 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'],function () {
     Route::post('reservation/{id}/remove','Admin\ReservationController@remove');
     Route::get('course/create','Admin\CourseController@add');
     Route::post('course/create','Admin\CourseController@create');
+    Route::get('course','Admin\CourseController@index');
+    Route::get('course/{id}','Admin\CourseController@show');
+    Route::post('course/{id}/hidden','Admin\CourseController@hidden');
+    Route::post('course/{id}/return','Admin\CourseController@return');
 });
 
 

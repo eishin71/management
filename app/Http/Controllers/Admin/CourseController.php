@@ -29,7 +29,8 @@ class CourseController extends Controller
 
    public function index(Request $request)
    {
-     return view('admin.course.index');
+     $posts = Course::all();
+     return view('admin.course.index',['posts' => $posts]);
    }
 
    public function delete(Request $request)
@@ -37,5 +38,23 @@ class CourseController extends Controller
      $course = Course::find($request->id);
      $course->delete();
      return redirect('admin/course/');
+   }
+
+   public function show(Request $request, $id)
+   {
+     $c = Course::find($id);
+     return view('admin.course.show',['c' => $c, 'id' => $id]);
+   }
+
+   public function hidden(Request $request,$id)
+   {
+     Course::find($id)->update(['del_flg' => 'true']);
+     return redirect('admin/course/');
+   }
+
+   public function return(Request $request,$id)
+   {
+     Course::find($id)->update(['del_flg' => 'false']);
+     return redirect('admin/couse/');
    }
 }

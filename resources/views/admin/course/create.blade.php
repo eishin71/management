@@ -16,7 +16,7 @@
           </div>
         </div>
         {{ csrf_field() }}
-        <input type="submit" name="btn btn-primary" value="保存">
+        <input type="submit" class="btn btn-primary" value="保存">
       </div>
     </div>
   </div>
