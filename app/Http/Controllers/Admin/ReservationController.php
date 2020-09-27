@@ -94,4 +94,10 @@ class ReservationController extends Controller
     }
     //find = 0,1
     //where =複数　foreachを使う時など
+
+    public function schedule(Request $requeset,$id)
+    {
+      Reservation::where('status','予約確定')->get();
+      return view('admin.reservation.schedule');
+    }
 }
