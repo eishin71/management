@@ -32,10 +32,10 @@
                         <thead>
                             <tr>
                                 <th width="2%">ID</th>
-                                <th width="10%">名前</th>
+                                <th width="13%">名前</th>
                                 <th width="5%">年齢</th>
                                 <th width="5%">性別</th>
-                                <th width="10%">電話番号</th>
+                                <th width="12%">電話番号</th>
                                 <th width="15%">e-mail</th>
                                 <th width="15%">コース</th>
                                 <th width="15%">予約希望日時</th>
@@ -56,7 +56,7 @@
                                     <td>{{ str_limit($reservation->phonenumber, 15) }}</td>
                                     <td>{{ str_limit($reservation->mail, 30) }}</td>
                                     <td>{{ str_limit($reservation->course_id, 20) }}</td>
-                                    <td>{{ str_limit($reservation->data, 20) }}</td>
+                                    <td>{{ str_limit($reservation->date, 20) }}</td>
                                     <td>{{ str_limit($reservation->symptom, 250) }}</td>
                                 </tr>
                             @endforeach

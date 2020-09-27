@@ -8,8 +8,8 @@
       </div>
       <div class="row">
         <div class="col-md-4">
-          @if($c->del_flg = 'false')
-          <form action="{{ action('Admin\CourseController@hidden',['id => $c->id']) }}"
+          @if($c->del_flg == false)
+          <form action="{{ action('Admin\CourseController@hidden',['id' => $c->id]) }}"
           method="post" enctype="multipart/form-data">
 
           {{ csrf_field() }}
@@ -17,8 +17,8 @@
           </form>
           @endif
           <p></p>
-          @if($c->del_flg != 'false')
-          <form action="{{ action('Admin\CourseController@return',['id => $c->id']) }}"
+          @if($c->del_flg != false)
+          <form action="{{ action('Admin\CourseController@return',['id' => $c->id]) }}"
           method="post" enctype="multipart/form-data">
 
           {{ csrf_field() }}

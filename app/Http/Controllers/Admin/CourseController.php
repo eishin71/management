@@ -48,13 +48,13 @@ class CourseController extends Controller
 
    public function hidden(Request $request,$id)
    {
-     Course::find($id)->update(['del_flg' => 'true']);
+     Course::find($id)->update(['del_flg' => true]);
      return redirect('admin/course/');
    }
 
    public function return(Request $request,$id)
    {
-     Course::find($id)->update(['del_flg' => 'false']);
-     return redirect('admin/couse/');
+     Course::find($id)->update(['del_flg' => false]);
+     return redirect('admin/course/');
    }
 }

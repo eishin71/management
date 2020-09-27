@@ -21,7 +21,8 @@
           <thead>
             <tr>
               <th width="5%">ID</th>
-              <th width="95%">コース名称</th>
+              <th width="45%">コース名称</th>
+              <th width="50%"></th>
             </tr>
           </thead>
           <tbody>
@@ -33,6 +34,12 @@
                   </a>
                 </th>
                 <td>{{ str_limit($course->name,50) }}</td>
+                @if($course->del_flg == false)
+                <td></td>
+                @endif
+                @if($course->del_flg == true)
+                <td>非表示になっています</td>
+                @endif
               </tr>
             @endforeach
           </tbody>

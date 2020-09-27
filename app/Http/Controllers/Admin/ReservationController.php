@@ -13,7 +13,7 @@ class ReservationController extends Controller
     public function add()
     {
       //コース一覧を入れておく変数
-      $courses = Course::all();
+      $courses = Course::where('del_flg',false)->get();
       return view('admin.reservation.create',compact('courses'));
     }
 
