@@ -97,7 +97,7 @@ class ReservationController extends Controller
 
     public function schedule(Request $requeset,$id)
     {
-      Reservation::where('status','予約確定')->get();
+      $reservation = Reservation::where('status','予約確定')->get();
       return view('admin.reservation.schedule');
     }
 }

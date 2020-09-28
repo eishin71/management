@@ -25,17 +25,12 @@
                 <tbody>
                   @foreach($reservation as $r)
                   <tr>
-                    <th>
-                      <a href="{{ action('Admin\ReservationController@show', ['id' => $r->id]) }}">
-                      {{ $r->id }}
-                      </a>
-                    </th>
+                    <td>{{ str_limit($r->id, 20) }}</td>
                     <td>{{ str_limit($r->name, 20) }}</td>
                     <td>{{ str_limit($r->date, 20) }}</td>
                     <td>{{ str_limit($r->course_id, 20) }}</td>
                     <td>{{ str_limit($r->phonenumber, 15) }}</td>
                     <td>{{ str_limit($r->mail, 30) }}</td>
-                    </th>
                   </tr>
                   @endforeach
                 </tbody>
