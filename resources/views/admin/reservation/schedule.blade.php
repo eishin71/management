@@ -6,7 +6,7 @@
     <div class="row">
       <h2>施術スケジュール</h2>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-12">
       <form action="{{ action('Admin\ReservationController@schedule') }}" method="get">
         <div class="row">
           <div class="list-schedule col-md-12 mx-auto">
@@ -25,12 +25,12 @@
                 <tbody>
                   @foreach($reservation as $r)
                   <tr>
-                    <td>{{ str_limit($r->id, 20) }}</td>
-                    <td>{{ str_limit($r->name, 20) }}</td>
-                    <td>{{ str_limit($r->date, 20) }}</td>
-                    <td>{{ str_limit($r->course_id, 20) }}</td>
-                    <td>{{ str_limit($r->phonenumber, 15) }}</td>
-                    <td>{{ str_limit($r->mail, 30) }}</td>
+                    <td>{{ $r->id }}</td>
+                    <td>{{ $r->name }}</td>
+                    <td>{{ $r->date->format('Y年m月d日 H:i') }}</td>
+                    <td>{{ $r->course->name }}</td>
+                    <td>{{ $r->phonenumber }}</td>
+                    <td>{{ $r->mail }}</td>
                   </tr>
                   @endforeach
                 </tbody>

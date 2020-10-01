@@ -55,7 +55,7 @@
                                     <td>{{ str_limit($reservation->sex, 10) }}</td>
                                     <td>{{ str_limit($reservation->phonenumber, 15) }}</td>
                                     <td>{{ str_limit($reservation->mail, 30) }}</td>
-                                    <td>{{ str_limit($reservation->course_id, 20) }}</td>
+                                    <td>{{ str_limit($reservation->course->name, 20) }}</td>
                                     <td>{{ str_limit($reservation->date, 20) }}</td>
                                     <td>{{ str_limit($reservation->symptom, 250) }}</td>
                                 </tr>

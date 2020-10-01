@@ -18,10 +18,10 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'],function () {
     Route::get('reservation/edit', 'Admin\ReservationController@edit');
     Route::post('reservation/edit', 'Admin\ReservationController@update');
     Route::get('reservation/delete', 'Admin\ReservationController@delete');
+    Route::get('reservation/schedule','Admin\ReservationController@schedule');
     Route::get('reservation/{id}', 'Admin\ReservationController@show');
     Route::post('reservation/{id}/update_status','Admin\ReservationController@update_status');
     Route::post('reservation/{id}/remove','Admin\ReservationController@remove');
-    Route::get('reservation/schedule','Admin\ReservationController@schedule');
     Route::get('course/create','Admin\CourseController@add');
     Route::post('course/create','Admin\CourseController@create');
     Route::get('course','Admin\CourseController@index');
