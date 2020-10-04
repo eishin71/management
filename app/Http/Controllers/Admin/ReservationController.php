@@ -32,7 +32,12 @@ class ReservationController extends Controller
       }
       $reservation->save();
 
-      return redirect('admin/reservation/create');
+      return view('admin.reservation.receptionist');
+    }
+
+    public function receptionist(Request $request)
+    {
+      return view('admin.reservation.receptionist');
     }
 
     public function index(Request $request)

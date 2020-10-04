@@ -14,7 +14,7 @@
         @if($r->status == '予約確定')
         <p>予約確定済みです。</p>
         @endif
-      </div>
+      　</div>
       <div class="row">
         <div class="col-md-4">
           @if($r->status != '予約確定')
