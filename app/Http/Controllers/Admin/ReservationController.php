@@ -35,6 +35,7 @@ class ReservationController extends Controller
       return view('admin.reservation.receptionist');
     }
 
+
     public function receptionist(Request $request)
     {
       return view('admin.reservation.receptionist');

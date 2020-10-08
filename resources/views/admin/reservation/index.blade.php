@@ -39,7 +39,6 @@
                                 <th width="15%">e-mail</th>
                                 <th width="15%">コース</th>
                                 <th width="15%">予約希望日時</th>
-                                <th width="20%">症状</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -57,7 +56,6 @@
                                     <td>{{ str_limit($reservation->mail, 30) }}</td>
                                     <td>{{ str_limit($reservation->course->name, 20) }}</td>
                                     <td>{{ str_limit($reservation->date, 20) }}</td>
-                                    <td>{{ str_limit($reservation->symptom, 250) }}</td>
                                 </tr>
                             @endforeach
                         </tbody>

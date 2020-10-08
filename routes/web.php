@@ -11,9 +11,10 @@
 |
 */
 
+  Route::get('reservation/create', 'Admin\ReservationController@add');
+  Route::post('reservation/create', 'Admin\ReservationController@create');
+
 Route::group(['prefix' => 'admin','middleware' => 'auth'],function () {
-    Route::get('reservation/create', 'Admin\ReservationController@add');
-    Route::post('reservation/create', 'Admin\ReservationController@create');
     Route::post('reservation/receptionist','Admin\ReservationController@receptionist');
     Route::get('reservation', 'Admin\ReservationController@index');
     Route::get('reservation/edit', 'Admin\ReservationController@edit');
