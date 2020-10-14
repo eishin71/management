@@ -32,13 +32,11 @@
                         <thead>
                             <tr>
                                 <th width="2%">ID</th>
-                                <th width="13%">名前</th>
-                                <th width="5%">年齢</th>
-                                <th width="5%">性別</th>
-                                <th width="12%">電話番号</th>
-                                <th width="15%">e-mail</th>
+                                <th width="15%">名前</th>
+                                <th width="15%">電話番号</th>
                                 <th width="15%">コース</th>
                                 <th width="15%">予約希望日時</th>
+                                <th width="15%"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -50,12 +48,15 @@
                                       </a>
                                     </th>
                                     <td>{{ str_limit($reservation->name, 20) }}</td>
-                                    <td>{{ str_limit($reservation->age, 10) }}</td>
-                                    <td>{{ str_limit($reservation->sex, 10) }}</td>
                                     <td>{{ str_limit($reservation->phonenumber, 15) }}</td>
-                                    <td>{{ str_limit($reservation->mail, 30) }}</td>
                                     <td>{{ str_limit($reservation->course->name, 20) }}</td>
-                                    <td>{{ str_limit($reservation->date, 20) }}</td>
+                                    <td>{{ str_limit($reservation->date->format('m月d日 H:i')) }}</td>
+                                    @if($reservation->status == '')
+                                    <td></td>
+                                    @endif
+                                    @if($reservation->status == '予約確定')
+                                    <td>予約確定済みです。</td>
+                                    @endif
                                 </tr>
                             @endforeach
                         </tbody>

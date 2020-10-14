@@ -108,4 +108,9 @@ class ReservationController extends Controller
                                 ->orderBy('date','asc')->get();
       return view('admin.reservation.schedule',['reservation' => $reservation]);
     }
+
+    public function confirm(Request $request){
+      $form = $request->all();
+      return view('admin.reservation.confirm',['form' => $form]);
+    }
 }

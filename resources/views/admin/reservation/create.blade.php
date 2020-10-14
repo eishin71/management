@@ -6,7 +6,7 @@
       <div class="row">
         <div class="col-md-8 mx-auto">
           <h2>Pure＋　予約フォーム</h2>
-          <form action="{{ action('Admin\ReservationController@create') }}"
+          <form action="{{ action('Admin\ReservationController@confirm') }}"
           method="post" enctype="multipart/form-data">
 
             @if (count($errors) > 0)
@@ -27,7 +27,12 @@
             <div class="form-group row">
               <label class="col-md-2">性別</label>
               <div class="col-md-10">
-                <input type="text" class="form-control" name="sex" value="{{ old('sex') }}">
+                <select name="sex">
+                  <option value="">性別を選択してください</option>
+                  <option value="男">男</option>
+                  <option value="女">女</option>
+                  <option value="その他">その他</option>
+                </select>
               </div>
             </div>
             <div class="form-group row">
@@ -58,6 +63,7 @@
               <label class="col-md-2">コース</label>
               <div class="col-md-10">
                 <select　name="course_id">
+                  <option value="">コースを選択してください</option>
                   @foreach ($courses as $c)
                     <option value="{{ $c->id}}">{{ $c->name }}</option>
                   @endforeach

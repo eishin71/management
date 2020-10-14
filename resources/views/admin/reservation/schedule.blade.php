@@ -25,7 +25,7 @@
                       </thead>
                       <tbody>
                           <h3>{{ $r->date->format('Y年m月d日') }}</h3>
-          @endif
+                        @endif
                           <tr>
                             <th>
                               <a href="{{ action('Admin\ReservationController@show', ['id' => $r->id]) }}">
