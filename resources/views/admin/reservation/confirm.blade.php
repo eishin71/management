@@ -31,4 +31,3 @@ method="get">
 <input type="submit" class="btn btn-danger" value="フォームに戻る">
 </form>
 @endsection
-戻るボタン実装

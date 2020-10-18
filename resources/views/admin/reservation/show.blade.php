@@ -3,74 +3,45 @@
 @section('content')
     <div class="container">
       <h2>予約詳細</h2>
-      <div calign=”left”>
         <div class="row">
           <div class="list-reservation col-sm-5 mx-auto">
             <div class="row">
               <table class="table table-dark">
                 <tbody>
                   <tr>
-                    <th width="2%">予約番号：{{ $r->id }}</th>
+                    <th>予約番号：</th>
+                    <td>{{ ($r->id) }}</td>
                   </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="row">
-              <table class="table table-dark">
-                <tbody>
                   <tr>
-                    <th width="13%">予約希望日時：{{ ($r->date->format('Y年m月d日 H:i')) }}</th>
+                    <th>予約希望日時：</th>
+                    <td>{{ ($r->date->format('Y年m月d日 H:i')) }}</td>
                   </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="row">
-              <table class="table table-dark">
-                <tbody>
                   <tr>
-                    <th width="15%">コース：{{ ($r->course->name) }}</th>
+                    <th>コース：</th>
+                    <td>{{ ($r->course->name) }}</td>
                   </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="row">
-              <table class="table table-dark">
-                <tbody>
                   <tr>
-                    <th width="15%">氏名：{{ ($r->name) }}</th>
+                    <th>氏名：</th>
+                    <td>{{ ($r->name) }}</td>
                   </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="row">
-              <table class="table table-dark">
-                <tbody>
                   <tr>
-                    <th width="12%">電話番号:{{ ($r->phonenumber) }}</th>
+                    <th>電話番号:</th>
+                    <td>{{ ($r->phonenumber) }}</td>
                   </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="row">
-              <table class="table table-dark">
-                <tbody>
                   <tr>
-                    <th width="15%">e-mail:{{ ($r->mail) }}</th>
+                    <th>e-mail:</th>
+                    <td>{{ ($r->mail) }}</td>
                   </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="row">
-              <table class="table table-dark">
-                <tbody>
                   <tr>
-                    <th width="15%">症状：{{ ($r->symptom) }}</th>
+                    <th>症状：</th>
+                    <td>{{ ($r->symptom) }}</td>
                   </tr>
                 </tbody>
               </table>
             </div>
             @if($r->status == '予約確定')
-            <p>予約確定済みです。</p>
+            <div class="alert alert-primary">
+            <h2>予約確定済みです。</h2>
             @endif
           </div>
       　</div>
@@ -95,5 +66,4 @@
           </form>
         </div>
       </div>
-  </div>
 @endsection
