@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 @section('title', '予約詳細')
 @section('content')
+  <div align="center">
     <div class="container">
       <h2>予約詳細</h2>
         <div class="row">
@@ -38,32 +39,25 @@
                   </tr>
                 </tbody>
               </table>
+              @if($r->status == '予約確定')
+              <div class="alert alert-primary">
+                <h2>予約確定済みです。</h2>
+              </div>
+              @endif
+              @if($r->status != '予約確定')
+               <form action="{{ action('Admin\ReservationController@update_status',['id' => $r->id]) }}"
+               method="post" enctype="multipart/form-data">
+               {{ csrf_field() }}
+               <input type="submit" class="btn btn-primary" value="予約確定">
+               </form>
+               @endif
+               <form action="{{ action('Admin\ReservationController@remove',['id' => $r->id]) }}" method="post">
+               {{ csrf_field() }}
+               <input type="submit" class="btn btn-danger" value="削除">
+               </form>
             </div>
-            @if($r->status == '予約確定')
-            <div class="alert alert-primary">
-            <h2>予約確定済みです。</h2>
-            @endif
           </div>
-      　</div>
-    </div>
-      <div class="row">
-        <div class="col-md-4">
-          @if($r->status != '予約確定')
-          <form action="{{ action('Admin\ReservationController@update_status',['id' => $r->id]) }}"
-          method="post" enctype="multipart/form-data">
-
-            {{ csrf_field() }}
-            <input type="submit" class="btn btn-primary" value="予約確定">
-          </form>
-          @endif
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4">
-          <form action="{{ action('Admin\ReservationController@remove',['id' => $r->id]) }}" method="post">
-              {{ csrf_field() }}
-              <input type="submit" class="btn btn-danger" value="削除">
-          </form>
-        </div>
-      </div>
+       </div>
+     </div>
+  </div>
 @endsection
