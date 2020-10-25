@@ -24,14 +24,8 @@ class ReservationController extends Controller
       $form = $request->all();
       unset($form['_token']);
 
-      $form['date'] = new Carbon($form['date']);
-      $reservation->fill($form);
-      //症状がない場合、からのデータを送る
-      if ($reservation->symptom == null){
-        $reservation->symptom = '';
-      }
-      $reservation->save();
-
+      $reservation->create($form);
+      
       return view('admin.reservation.receptionist');
     }
 

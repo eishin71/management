@@ -25,12 +25,18 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'],function () {
     Route::get('reservation/{id}', 'Admin\ReservationController@show');
     Route::post('reservation/{id}/update_status','Admin\ReservationController@update_status');
     Route::post('reservation/{id}/remove','Admin\ReservationController@remove');
+
     Route::get('course/create','Admin\CourseController@add');
     Route::post('course/create','Admin\CourseController@create');
     Route::get('course','Admin\CourseController@index');
     Route::get('course/{id}','Admin\CourseController@show');
     Route::post('course/{id}/hidden','Admin\CourseController@hidden');
     Route::post('course/{id}/return','Admin\CourseController@return');
+
+    Route::get('client/create','Admin\ClientController@add');
+    Route::post('client/create','Admin\ClientController@create');
+    Route::post('client/create2','Admin\ClientController@create2');
+    Route::get('client/','Admin\ClientController@index');
 });
 
 
