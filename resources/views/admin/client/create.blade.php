@@ -40,11 +40,11 @@
        {{ csrf_field() }}
        <input type="submit" class="btn btn-primary" value="保存">
       </form>
-      <form action="{{ action('Admin\ClientController@create2') }}"
-      method="post" enctype="multipart/form-data">
-      {{ csrf_field() }}
-    　  <input type="submit" class="btn btn-danger" value="詳細">
-      </form>
+        <form action="{{ action('Admin\ClientController@create') }}"
+        method="post" enctype="multipart/form-data">
+        {{ csrf_field() }}
+      　   <input type="submit" class="btn btn-danger" value="詳細">
+        </form>
     </div>
   </div>
 </div>

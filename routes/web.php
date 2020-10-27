@@ -35,8 +35,8 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'],function () {
 
     Route::get('client/create','Admin\ClientController@add');
     Route::post('client/create','Admin\ClientController@create');
-    Route::post('client/create2','Admin\ClientController@create2');
     Route::get('client/','Admin\ClientController@index');
+    Route::get('client/edit','Admin\ClientController@edit');
 });
 
 
