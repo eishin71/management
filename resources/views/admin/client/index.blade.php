@@ -26,6 +26,9 @@
                   @foreach($posts as $client)
                     <tr>
                       <th>
+                        <a href="{{ action('Admin\ClientController@show',['id' => $client->id]) }}">
+                        {{ $client->id }}
+                        </a>
                       </th>
                       <td>{{($client->name) }}</td>
                       <td>{{($client->birthday)}}</td>

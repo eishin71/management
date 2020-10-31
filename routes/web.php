@@ -16,6 +16,9 @@
   Route::post('reservation/confirm', 'Admin\ReservationController@confirm');
 
 Route::group(['prefix' => 'admin','middleware' => 'auth'],function () {
+
+    Route::get('start/','Admin\StartController@index');
+
     Route::post('reservation/receptionist','Admin\ReservationController@receptionist');
     Route::get('reservation', 'Admin\ReservationController@index');
     Route::get('reservation/edit', 'Admin\ReservationController@edit');
@@ -36,7 +39,9 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'],function () {
     Route::get('client/create','Admin\ClientController@add');
     Route::post('client/create','Admin\ClientController@create');
     Route::get('client/','Admin\ClientController@index');
-    Route::get('client/edit','Admin\ClientController@edit');
+    Route::get('client/{id}/edit','Admin\ClientController@edit');
+    Route::post('client/{id}/update','Admin\ClientController@update');
+    Route::get('client/{id}','Admin\ClientController@show');
 });
 
 
