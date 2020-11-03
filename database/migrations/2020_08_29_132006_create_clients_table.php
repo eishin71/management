@@ -17,15 +17,12 @@ class CreateClientsTable extends Migration
           $table->bigincrements('id');
           $table->string('name');
           $table->string('sex');
-          $table->string('job');
           $table->datetime('birthday');
-          $table->string('age');
-          $table->string('domicile');
-          $table->string('phonenumber');
-          $table->string('e-mail');
-          $table->string('remarks');
-          $table->string('symptom');
-          $table->integer('course_id');
+          $table->string('job')->nullable();
+          $table->string('domicile')->nullable();
+          $table->string('phonenumber')->nullable();
+          $table->string('e-mail')->nullable();
+          $table->string('remarks')->nullable();
           $table->timestamps();
         });
     }

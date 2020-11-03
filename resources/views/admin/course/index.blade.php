@@ -6,6 +6,12 @@
     <div class="row">
       <h2>コース一覧</h2>
     </div>
+    <div class="row">
+      <div class="col-md-14">
+        <a href="{{ action('Admin\StartController@index') }}">　HOME</a>
+      </div>
+    </div>
+    <p></p>
   <div class="row">
     <div class="col-md-4">
       <a href="{{ action('Admin\CourseController@add') }}"

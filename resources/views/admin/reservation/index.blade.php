@@ -3,6 +3,12 @@
 
 @section('content')
     <div class="container">
+      <div class="row">
+        <div class="col-md-14">
+          <a href="{{ action('Admin\StartController@index') }}">　HOME</a>
+        </div>
+      </div>
+      <p></p>
         <div class="row">
             <h2>予約一覧</h2>
         </div>

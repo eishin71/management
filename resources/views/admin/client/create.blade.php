@@ -3,6 +3,13 @@
 @section('content')
 <div class="container">
   <div class="row">
+    <div class="col-md-4">
+      <a href="{{ action('Admin\StartController@index') }}">HOME</a>
+    </div>
+  </div>
+  
+  <p></p>
+  <div class="row">
     <div class="col-md-12 mx-auto">
       <h2>新規顧客情報登録</h2>
       <form action="{{ action('Admin\ClientController@create') }}"
