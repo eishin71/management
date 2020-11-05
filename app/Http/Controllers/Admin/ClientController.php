@@ -23,7 +23,7 @@ class ClientController extends Controller
     $client->fill($form);
     $client->save();
 
-    return redirect('admin/client/index');
+    return redirect('admin/client/edit');
   }
 
   public function index(Request $request)

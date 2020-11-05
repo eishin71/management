@@ -20,18 +20,20 @@
                     <th width="2%">ID</th>
                     <th width="15%%">名前</th>
                     <th width="15%">生年月日</th>
+                    <th width="15%">連絡先</th>
                   </tr>
                 </thead>
                 <tbody>
                   @foreach($posts as $client)
                     <tr>
                       <th>
-                        <a href="{{ action('Admin\ClientController@show',['id' => $client->id]) }}">
+                        <a href="{{ action('Admin\ClientController@edit',['id' => $client->id]) }}">
                         {{ $client->id }}
                         </a>
                       </th>
                       <td>{{($client->name) }}</td>
                       <td>{{($client->birthday)}}</td>
+                      <td>{{($client->phonenumber)}}</td>
                     </tr>
                   @endforeach
                 </tbody>
