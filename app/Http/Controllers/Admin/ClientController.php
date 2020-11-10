@@ -10,6 +10,7 @@ class ClientController extends Controller
 {
   public function add()
   {
+    //$question = Question::where('del_flg',false)->get();
     return view('admin.client.create');
   }
 
@@ -23,7 +24,7 @@ class ClientController extends Controller
     $client->fill($form);
     $client->save();
 
-    return redirect('admin/client/edit');
+    return redirect()->action('Admin\ClientController@show', ['id' => 1]);
   }
 
   public function index(Request $request)
@@ -49,7 +50,7 @@ class ClientController extends Controller
 
   public function update(Request $request,$id)
   {
-    $this->validate($request, Client::rules);
+    $this->validate($request, Client::$rules);
     $client = Client::find($request->id);
     $client_form = $request->all();
     unset($client_form['_token']);

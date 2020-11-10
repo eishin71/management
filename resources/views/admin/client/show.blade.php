@@ -5,6 +5,15 @@
     <div class="container">
       <h2>顧客詳細</h2>
       <form action="{{ action('Admin\ClientController@update',['id' => $client->id]) }}" method="post">
+        @if (count($errors) > 0)
+          <div class="alert alert-danger" role="alert">
+            <ul>
+              @foreach($errors->all() as $e)
+                  <li>{{ $e }}</li>
+              @endforeach
+            </ul>
+          </div>
+        @endif
         <div class="form-group row">
           <label class="col-md-2">氏名</label>
           <div class="col-md-10">
@@ -31,7 +40,7 @@
         <div class="form-group row">
           <label class="col-md-2">生年月日</label>
           <div class="col-md-10">
-            <input type="date" class="form-control" name="birthday" value="{{ $client->birthday }}">
+            <input type="date" class="form-control" name="birthday" value="{{ $client->birthday->format('Y-m-d') }}">
           </div>
         </div>
         <div class="form-group row">

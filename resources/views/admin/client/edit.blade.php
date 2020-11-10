@@ -32,7 +32,7 @@
        <div class="form-group row">
          <label class="col-md-2">生年月日</label>
          <div class="col-md-10">
-           <input type="date" class="form-control" name="birthday" value="{{ $client->birthday }}">
+           <input type="date" class="form-control" name="birthday" value="{{ $client->birthday->format('Y-m-d') }}">
          </div>
        </div>
        {{ csrf_field() }}

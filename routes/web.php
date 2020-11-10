@@ -42,6 +42,14 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'],function () {
     Route::get('client/{id}/edit','Admin\ClientController@edit');
     Route::post('client/{id}/update','Admin\ClientController@update');
     Route::get('client/{id}','Admin\ClientController@show');
+
+    Route::get('question/create','Admin\QuestionController@add');
+    Route::post('question/create','Admin\QuestionController@create');
+    Route::get('question/','Admin\QuestionController@index');
+    Route::get('question/{id}','Admin\QuestionController@show');
+    Route::post('question/{id}/hidden','Admin\QuestionController@hidden');
+    Route::post('question/{id}/return','Admin\QuestionController@return');
+
 });
 
 

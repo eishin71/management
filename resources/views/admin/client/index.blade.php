@@ -32,7 +32,7 @@
                         </a>
                       </th>
                       <td>{{($client->name) }}</td>
-                      <td>{{($client->birthday)}}</td>
+                      <td>{{($client->birthday->format('Y/m/d'))}}</td>
                       <td>{{($client->phonenumber)}}</td>
                     </tr>
                   @endforeach
