@@ -24,7 +24,7 @@ class ClientController extends Controller
     $client->fill($form);
     $client->save();
 
-    return redirect()->action('Admin\ClientController@show', ['id' => 1]);
+    return redirect()->action('Admin\ClientController@show', ['id' => $id]);
   }
 
   public function index(Request $request)
