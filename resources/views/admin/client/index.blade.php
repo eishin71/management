@@ -27,7 +27,7 @@
                   @foreach($posts as $client)
                     <tr>
                       <th>
-                        <a href="{{ action('Admin\ClientController@edit',['id' => $client->id]) }}">
+                        <a href="{{ action('Admin\ClientController@show',['id' => $client->id]) }}">
                         {{ $client->id }}
                         </a>
                       </th>

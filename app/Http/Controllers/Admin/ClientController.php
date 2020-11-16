@@ -24,7 +24,7 @@ class ClientController extends Controller
     $client->fill($form);
     $client->save();
 
-    return redirect()->action('Admin\ClientController@show', ['id' => $id]);
+    return redirect()->action('Admin\ClientController@edit', ['id' => $client->id]);
   }
 
   public function index(Request $request)
@@ -46,6 +46,12 @@ class ClientController extends Controller
        abort(404);
     }
     return view('admin.client.edit',['client' => $client, 'id' => $id]);
+  }
+
+  public function details(Request $request,$id)
+  {
+    $client = Client::find($id);
+    return view('admin.client.details',['client' => $client, 'id' => $id]);
   }
 
   public function update(Request $request,$id)

@@ -40,6 +40,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'],function () {
     Route::post('client/create','Admin\ClientController@create');
     Route::get('client/','Admin\ClientController@index');
     Route::get('client/{id}/edit','Admin\ClientController@edit');
+    Route::get('client/{id}/details','Admin\ClientController@details');
     Route::post('client/{id}/update','Admin\ClientController@update');
     Route::get('client/{id}','Admin\ClientController@show');
 
@@ -54,7 +55,6 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'],function () {
     Route::post('medical_history/create','Admin\Medical_historyController@create');
     Route::get('medical_history/','Admin\Medical_historyController@index');
     Route::get('medical_history/{id}/','Admin\Medical_historyController@show');
-    Route::get('medical_history/create','Admin\Medical_historyController@add');
 
     Route::get('answer/create','Admin\AnswerController@add');
     Route::post('answer/create','Admin\AnswerController@create');

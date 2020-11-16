@@ -1,9 +1,9 @@
 @extends('layouts.admin')
-@section('title', '顧客詳細')
+@section('title', '顧客詳細編集画面')
 @section('content')
   <div class="center">
     <div class="container">
-      <h2>顧客詳細</h2>
+      <h2>顧客詳細編集画面</h2>
       <form action="{{ action('Admin\ClientController@update',['id' => $client->id]) }}" method="post">
         @if (count($errors) > 0)
           <div class="alert alert-danger" role="alert">

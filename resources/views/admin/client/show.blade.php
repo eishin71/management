@@ -26,7 +26,12 @@
                   <td>{{ ($client->birthday->format('Y/m/d')) }}</td>
                 </tr>
               </tbody>
+
             </table>
+            <form action="{{ action('Admin\ClientController@details',['id' => $client->id]) }}" method="get">
+              {{  csrf_field()}}
+              <input type="submit" class="btn btn-danger" value="詳細">
+            </form>
             <a href="{{ action('Admin\Medical_historyController@create') }}">問診票の入力</a>
           </div>
         </div>

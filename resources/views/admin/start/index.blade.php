@@ -28,6 +28,11 @@
                         <a href="{{ action('Admin\ReservationController@schedule') }}" >スケジュール</a>
                       </th>
                     </tr>
+                    <tr>
+                      <th>
+                        <a href="{{ action('Admin\CourseController@index') }}" >コース一覧</a>
+                      </th>
+                    </tr>
                 </table>
               </div>
             </div>
