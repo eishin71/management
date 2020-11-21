@@ -6,27 +6,29 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Medical_history;
 use App\Question;
-use APP\Answer;
+use App\Answer;
 use Carbon\Carbon;
 
 class Medical_historyController extends Controller
 {
-  public function add()
+  public function add(Request $request,$id)
   {
     $questions = Question::where('del_flg',false)->get();
-    return view('admin.medical_history.create',compact('questions'));
+    return view('admin.medical_history.create',compact('questions','id'));
   }
 
   public function create(Request $request)
   {
-    $this->validate($request,Answer::$rules);
-    $answer = new Answer;
     $form = $request->all();
-    unset($form['_token']);
-
-    $answer->fill($form);
-    $answer->save();
-
-    return redirect('admin/medical_history/',['form' => $form]);
+    /*配列*/
+    foreach ($form['answer'] as $question_id => $answer_text) {
+      $answer = new Answer;
+      $answer->answer_date = $answer_date;
+      $answer->question_id = $question_id;
+      $answer->client_id = $form['client_id'];
+      $answer->answer = $answer_text;
+      $answer->save();
+    }
+    return redirect()->action('Admin\ClientController@show',['id' => $form['client_id']]);
   }
 }

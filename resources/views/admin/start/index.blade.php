@@ -33,6 +33,11 @@
                         <a href="{{ action('Admin\CourseController@index') }}" >コース一覧</a>
                       </th>
                     </tr>
+                    <tr>
+                      <th>
+                        <a href="{{ action('Admin\QuestionController@index') }}" >問診票質問内容一覧</a>
+                      </th>
+                    </tr>
                 </table>
               </div>
             </div>

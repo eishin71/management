@@ -9,7 +9,12 @@ class Answer extends Model
 {
   protected $guarded = array('id');
 
+  protected $dates = [
+    'answer_date'
+  ];
+
   public static $rules = array(
+    'answer_date' => '',
     'answer' => '',
     'client_id' => '',
     'question_id' => '',

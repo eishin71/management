@@ -51,16 +51,10 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'],function () {
     Route::post('question/{id}/hidden','Admin\QuestionController@hidden');
     Route::post('question/{id}/return','Admin\QuestionController@return');
 
-    Route::get('medical_history/create','Admin\Medical_historyController@add');
+    Route::get('medical_history/{id}/create','Admin\Medical_historyController@add');
     Route::post('medical_history/create','Admin\Medical_historyController@create');
     Route::get('medical_history/','Admin\Medical_historyController@index');
     Route::get('medical_history/{id}/','Admin\Medical_historyController@show');
-
-    Route::get('answer/create','Admin\AnswerController@add');
-    Route::post('answer/create','Admin\AnswerController@create');
-    Route::get('answer/','Admin\AnswerController@index');
-    Route::get('answer/create','Admin\AnswerController@add');
-
 });
 
 
