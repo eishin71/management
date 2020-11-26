@@ -39,8 +39,18 @@ class Medical_historyController extends Controller
 
   public function show(Request $request,$id)
   {
-    $answer = Answer::find($id);
-    return view('admin.medical_history.show',['answer' => $answer,'id' => $id]);
+    $answers = Answer::where('client_id',$id)->get();
+    //配列を初期化
+    $answer_date_array = [];
+    //コレクションを配列に変える
+    $temp_array = $answers->toArray();
+    foreach ($temp_array as $answer) {
+      $answer_date_array[] = $answer['answer_date'];
+    }
+    //重複をとる
+    $answer_date_array = array_unique($answer_date_array);
+
+    return view('admin.medical_history.show',[ 'answer_date_array' => $answer_date_array, 'answers' => $answers,'id' => $id]);
   }
 
   public function edit(Request $request,$id)

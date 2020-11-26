@@ -19,4 +19,8 @@ class Answer extends Model
     'client_id' => '',
     'question_id' => '',
   );
+
+  public function question(){
+    return $this->belongsTo('App\Question');
+  }
 }
