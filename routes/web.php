@@ -53,11 +53,12 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'],function () {
 
     Route::get('medical_history/{id}/create','Admin\Medical_historyController@add');
     Route::post('medical_history/create','Admin\Medical_historyController@create');
-    Route::get('medical_history/','Admin\Medical_historyController@index');
-    Route::get('medical_history/{id}/','Admin\Medical_historyController@show');
+    Route::get('medical_history/{id}','Admin\Medical_historyController@index');
+    Route::get('medical_history/{client_id}/{answer_date}', 'Admin\Medical_historyController@show');
     Route::get('medical_history/{id}/edit','Admin\Medical_historyController@edit');
     Route::get('medical_history/{id}/details','Admin\Medical_historyController@details');
     Route::get('medical_history/{id}/update','Admin\Medical_historyController@update');
+
 
 });
 

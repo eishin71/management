@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Medical_history;
 use App\Question;
 use App\Answer;
+use App\Client;
 use Carbon\Carbon;
 
 class Medical_historyController extends Controller
@@ -31,14 +32,10 @@ class Medical_historyController extends Controller
     return redirect()->action('Admin\ClientController@show',['id' => $form['client_id']]);
   }
 
-  public function index(Request $request)
+  public function index(Request $request,$id)
   {
-    $posts = Answer::all();
-    return view('admin.medical_history.index',['posts' => $posts]);
-  }
-
-  public function show(Request $request,$id)
-  {
+    $answer = Answer::all();
+    $clients = Client::where('id',$id)->get();
     $answers = Answer::where('client_id',$id)->get();
     //配列を初期化
     $answer_date_array = [];
@@ -49,8 +46,13 @@ class Medical_historyController extends Controller
     }
     //重複をとる
     $answer_date_array = array_unique($answer_date_array);
+    return view('admin.medical_history.index',['answers' => $answers,'clients' => $clients,'answer_date_array' => $answer_date_array,'answer' => $answer]);
+  }
 
-    return view('admin.medical_history.show',[ 'answer_date_array' => $answer_date_array, 'answers' => $answers,'id' => $id]);
+  public function show(Request $request,$client_id)
+  {
+    $answers = Answer::where('client_id',$client_id)->get();
+    return view('admin.medical_history.show',[ 'answers' => $answers,'id' => $id]);
   }
 
   public function edit(Request $request,$id)
