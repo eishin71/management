@@ -37,6 +37,7 @@ class Medical_historyController extends Controller
     $answer = Answer::all();
     $clients = Client::where('id',$id)->get();
     $answers = Answer::where('client_id',$id)->get();
+
     //配列を初期化
     $answer_date_array = [];
     //コレクションを配列に変える
@@ -46,13 +47,20 @@ class Medical_historyController extends Controller
     }
     //重複をとる
     $answer_date_array = array_unique($answer_date_array);
-    return view('admin.medical_history.index',['answers' => $answers,'clients' => $clients,'answer_date_array' => $answer_date_array,'answer' => $answer]);
+    return view('admin.medical_history.index',
+    ['answers' => $answers,'clients' => $clients,'answer_date_array' => $answer_date_array,'answer' => $answer,'client_id' => $id]);
   }
 
   public function show(Request $request,$client_id)
   {
-    $answers = Answer::where('client_id',$client_id)->get();
-    return view('admin.medical_history.show',[ 'answers' => $answers,'id' => $id]);
+    $answer = Answer::find($client_id);
+    $answer_date_array = [];
+    //コレクションを配列に変える
+    $temp_array = $answers->toArray();
+    foreach ($temp_array as $answer) {
+      $answer_date_array[] = $answer['answer_date'];
+    }
+    return view('admin.medical_history.show',[ 'answer' => $answer,'answer_date_array' => $answer_date_array,]);
   }
 
   public function edit(Request $request,$id)
