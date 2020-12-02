@@ -8,8 +8,8 @@
   @foreach($answer_date_array as $answer_date)
     <div class="row">
       <a href="{{ action('Admin\Medical_historyController@show',
-      ['client_id' => $client_id, 'answer_date' => $answer_date]) }}">
-        {{ $answer_date }}
+      ['client_id' => $client_id, 'answer_date' => $answer_date->format('Ymd')]) }}">
+        {{ $answer_date->format('Y年m月d日') }}
       </a>
     </div>
   @endforeach

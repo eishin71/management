@@ -47,20 +47,21 @@ class Medical_historyController extends Controller
     }
     //重複をとる
     $answer_date_array = array_unique($answer_date_array);
-    return view('admin.medical_history.index',
-    ['answers' => $answers,'clients' => $clients,'answer_date_array' => $answer_date_array,'answer' => $answer,'client_id' => $id]);
+    foreach ($answer_date_array as $i => $answer_date) {
+      $answer_date_array[$i] = new Carbon($answer_date);
+    }
+
+    return view('admin.medical_history.index',['answers' => $answers,'clients' => $clients,'answer_date_array' => $answer_date_array,'answer' => $answer,'client_id' => $id]);
   }
 
-  public function show(Request $request,$client_id)
+  public function show(Request $request,$client_id,$answer_date)
   {
-    $answer = Answer::find($client_id);
-    $answer_date_array = [];
-    //コレクションを配列に変える
-    $temp_array = $answers->toArray();
-    foreach ($temp_array as $answer) {
-      $answer_date_array[] = $answer['answer_date'];
-    }
-    return view('admin.medical_history.show',[ 'answer' => $answer,'answer_date_array' => $answer_date_array,]);
+    $answers = Answer::where('client_id',$client_id)
+                     ->where('answer_date',$answer_date)
+                     ->get();
+    $answer_date = new Carbon($answer_date);
+
+    return view('admin.medical_history.show',[ 'answers' => $answers,'answer_date' => $answer_date]);
   }
 
   public function edit(Request $request,$id)
