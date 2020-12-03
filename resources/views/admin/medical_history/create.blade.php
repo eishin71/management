@@ -24,6 +24,29 @@
         </div>
       </div>
       @endforeach
+      <div class="form-group row">
+        <label class="col-md-2">コース</label>
+        <div class="col-md-10">
+          <select　name="course_id">
+            <option value="">コースを選択してください</option>
+            @foreach ($courses as $c)
+              <option value="{{ $c->id}}">{{ $c->name }}</option>
+            @endforeach
+        </div>
+      </div>
+        <div class="form-group row">
+          <label class="col-md-2">施術箇所</label>
+          <div class="col-md-10">
+            <input type="text" class="form-control" name="part" value="{{ old('part') }}">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-md-2">治療内容</label>
+          <div class="col-md-10">
+            <textarea class="form-control" name="treatment" rows="20">{{ old('treatment') }}</textarea>
+          </div>
+        </div>
+
       {{ csrf_field() }}
       <input type="submit" class="btn btn-primary" value="保存">
     </form>

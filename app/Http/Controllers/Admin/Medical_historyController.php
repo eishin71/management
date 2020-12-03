@@ -8,6 +8,8 @@ use App\Medical_history;
 use App\Question;
 use App\Answer;
 use App\Client;
+use App\Course;
+use App\Treatment;
 use Carbon\Carbon;
 
 class Medical_historyController extends Controller
@@ -15,7 +17,9 @@ class Medical_historyController extends Controller
   public function add(Request $request,$id)
   {
     $questions = Question::where('del_flg',false)->get();
-    return view('admin.medical_history.create',compact('questions','id'));
+    $courses = Course::where('del_flg',false)->get();
+
+    return view('admin.medical_history.create',compact('questions','id','courses'));
   }
 
   public function create(Request $request)
@@ -29,7 +33,15 @@ class Medical_historyController extends Controller
       $answer->answer = $answer_text;
       $answer->save();
     }
-    return redirect()->action('Admin\ClientController@show',['id' => $form['client_id']]);
+    $this->validate($request,Treatment::$rules);
+    $treatment = new Treatment;
+    $form = $request->all();
+    unset($form['_token']);
+
+    $treatment->fill($form);
+    $treatment->save();
+
+    return redirect()->action('Admin\ClientController@show',['id' => $form['client_id'],'treatment' => $treatment]);
   }
 
   public function index(Request $request,$id)
@@ -56,6 +68,7 @@ class Medical_historyController extends Controller
 
   public function show(Request $request,$client_id,$answer_date)
   {
+    //複数の条件を指定する方法
     $answers = Answer::where('client_id',$client_id)
                      ->where('answer_date',$answer_date)
                      ->get();
