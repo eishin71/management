@@ -12,6 +12,32 @@
             {{ $answer->answer }}
           </div>
           @endforeach
+          <div class="form-group row">
+            <label class="col-md-2">施術日</label>
+            <div class="col-md-10">
+              <p>{{ $treatment->treatment_date }}</p>
+       　   </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-2">コース</label>
+            <div class="col-md-10">
+              <p>{{ $treatment->course }}</p>
+       　   </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-md-2">施術箇所</label>
+            <div class="col-md-10">
+              <p>{{ $treatment->part }}</p>
+       　   </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-2">施術内容</label>
+            <div class="col-md-10">
+              <p>{{ $treatment->treatment }}</p>
+       　   </div>
+          </div>
+          </div>
         </div>
       </div>
     </div>
