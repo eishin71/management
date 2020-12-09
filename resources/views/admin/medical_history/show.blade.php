@@ -13,18 +13,11 @@
           </div>
           @endforeach
           <div class="form-group row">
-            <label class="col-md-2">施術日</label>
-            <div class="col-md-10">
-              <p>{{ $treatment->treatment_date }}</p>
-       　   </div>
-          </div>
-          <div class="form-group row">
             <label class="col-md-2">コース</label>
             <div class="col-md-10">
-              <p>{{ $treatment->course }}</p>
+              <p>{{ $treatment->course->name }}</p>
        　   </div>
           </div>
-
           <div class="form-group row">
             <label class="col-md-2">施術箇所</label>
             <div class="col-md-10">
@@ -40,6 +33,4 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
 @endsection

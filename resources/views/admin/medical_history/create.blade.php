@@ -25,15 +25,9 @@
       </div>
       @endforeach
       <div class="form-group row">
-        <label class="col-md-2">施術日</label>
-        <div class="col-md-10">
-          <input type="date" class="form-control" name="treatment_date" value="{{ old('treatment_date') }}">
-        </div>
-      </div>
-      <div class="form-group row">
         <label class="col-md-2">コース</label>
         <div class="col-md-10">
-          <select　name="course">
+          <select　name="course_id">
             <option value="">コースを選択してください</option>
             @foreach ($courses as $c)
               <option value="{{ $c->id}}">{{ $c->name }}</option>

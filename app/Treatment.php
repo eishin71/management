@@ -13,6 +13,12 @@ class Treatment extends Model
     'treatment_date'
   ];
 
+  public function course()
+  {
+    return $this->belongsTo('App\Course');
+  }
+
+
   public static $rules = array(
     'course' => '',
     'part' => '',

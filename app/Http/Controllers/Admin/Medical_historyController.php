@@ -34,10 +34,10 @@ class Medical_historyController extends Controller
       $answer->save();
     }
     $treatment = new Treatment;
-    $treatment->course = $form['course'];
+    $treatment->course_id = $form['course_id'];
     $treatment->part = $form['part'];
     $treatment->treatment = $form['treatment'];
-    $treatment->treatment_date = $form['treatment_date'];
+    $treatment->treatment_date = $form['answer_date'];
     $treatment->client_id = $form['client_id'];
     $treatment->save();
 
@@ -66,20 +66,19 @@ class Medical_historyController extends Controller
     return view('admin.medical_history.index',['answers' => $answers,'clients' => $clients,'answer_date_array' => $answer_date_array,'answer' => $answer,'client_id' => $id]);
   }
 
-  public function show(Request $request,$client_id,$answer_date,$treatment_date)
+  public function show(Request $request,$client_id,$answer_date)
   {
     //複数の条件を指定する方法
     $answers = Answer::where('client_id',$client_id)
                      ->where('answer_date',$answer_date)
                      ->get();
     $answer_date = new Carbon($answer_date);
+
     $treatment = Treatment::where('client_id',$client_id)
-                     ->where('treatment_date',$treatment_date)
-                     ->get();
-    $treatment_date = new Carbon($treatment_date);
+                          ->where('treatment_date',$answer_date)
+                          ->first();
 
-
-    return view('admin.medical_history.show',[ 'answers' => $answers,'answer_date' => $answer_date,'treatment' => $treatment,'treatment_date' => $treatment_date]);
+    return view('admin.medical_history.show',[ 'answers' => $answers,'answer_date' => $answer_date,'treatment' => $treatment ]);
   }
 
   public function edit(Request $request,$id)
