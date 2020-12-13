@@ -12,21 +12,22 @@
             {{ $answer->answer }}
           </div>
           @endforeach
+          <p></p>
           <div class="form-group row">
-            <label class="col-md-2">コース</label>
-            <div class="col-md-10">
+            <label class="col-md-4">コース</label>
+            <div class="col-md-8">
               <p>{{ $treatment->course->name }}</p>
        　   </div>
           </div>
           <div class="form-group row">
-            <label class="col-md-2">施術箇所</label>
-            <div class="col-md-10">
+            <label class="col-md-4">施術箇所</label>
+            <div class="col-md-8">
               <p>{{ $treatment->part }}</p>
        　   </div>
           </div>
           <div class="form-group row">
-            <label class="col-md-2">施術内容</label>
-            <div class="col-md-10">
+            <label class="col-md-4">施術内容</label>
+            <div class="col-md-8">
               <p>{{ $treatment->treatment }}</p>
        　   </div>
           </div>

@@ -18,16 +18,20 @@ class ReservationController extends Controller
     }
 
     public function create(Request $request)
-    {
-      $this->validate($request,Reservation::$rules);
-      $reservation = new Reservation;
-      $form = $request->all();
-      unset($form['_token']);
-
-      $reservation->create($form);
-      
-      return view('admin.reservation.receptionist');
+  {
+    $date = Reservation::find($request->date);
+    if (Reservation::where('date', $date)->get()){
+          $error_message = 'この時間はすでに予約が入っています';
+          return view('admin.reservation.create',['date' => $date,'error_message' => $error_message]);
+    } else {
+    $this->validate($request,Reservation::$rules);
+    $reservation = new Reservation;
+    $form = $request->all();
+    unset($form['_token']);
+    $reservation->create($form);
     }
+    return view('admin.reservation.receptionist');
+  }
 
 
     public function receptionist(Request $request)
