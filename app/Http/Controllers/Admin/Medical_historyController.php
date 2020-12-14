@@ -25,6 +25,7 @@ class Medical_historyController extends Controller
   public function create(Request $request)
   {
     $form = $request->all();
+    //フォームから入力した全てを受け取る
     foreach ($form['answer'] as $question_id => $answer_text) {
       $answer = new Answer;
       $answer->answer_date = $form['answer_date'];

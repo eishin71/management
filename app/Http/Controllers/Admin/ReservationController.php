@@ -18,19 +18,20 @@ class ReservationController extends Controller
     }
 
     public function create(Request $request)
-  {
-    $date = Reservation::find($request->date);
-    if (Reservation::where('date', $date)->get()){
+    {
+    $courses = Course::where('del_flg',false)->get();
+    $form = $request->all();
+    $date = $form['date'];
+    if (Reservation::where('date',$date)->get()) {
           $error_message = 'この時間はすでに予約が入っています';
-          return view('admin.reservation.create',['date' => $date,'error_message' => $error_message]);
+          return view('admin.reservation.create',['error_message' => $error_message,'courses' => $courses]);
     } else {
     $this->validate($request,Reservation::$rules);
     $reservation = new Reservation;
-    $form = $request->all();
     unset($form['_token']);
     $reservation->create($form);
-    }
     return view('admin.reservation.receptionist');
+    }
   }
 
 
