@@ -6,7 +6,7 @@
       <div class="row">
         <div class="col-md-8 mx-auto">
           <h2>Pure＋　予約フォーム</h2>
-          <form action="{{ action('Admin\ReservationController@create') }}"
+          <form action="{{ action('Admin\ReservationController@confirm') }}"
           method="post" enctype="multipart/form-data">
 
             @if (count($errors) > 0)
@@ -18,7 +18,9 @@
                 </ul>
               </div>
             @endif
+            @if ($error_message !== '')
             <p>{{ $error_message }}</p>
+            @endif
             <div class="form-group row">
               <label class="col-md-2">名前</label>
               <div class="col-md-10">
