@@ -5,6 +5,7 @@
     <h2>コース詳細</h2>
       <div class="h5">
       <p>・{{ $c->name }}</p>
+      <p>・{{ $c->required_time }}</p>
       </div>
       <div class="row">
         <div class="col-md-4">

@@ -33,8 +33,6 @@ class ReservationController extends Controller
     $have_reservation = Reservation::where('date','<',$after_date)
                                    ->where('date','>=',$before_date)
                                    ->exists();
-//confirmのcontrollerにcreatecontrollerと似たような処理を書く
-//確認画面でエラー画面を出せるようにする
     //exists = true,falseを返す
     if ($have_reservation) {
           $error_message = 'この時間はすでに予約が入っています';

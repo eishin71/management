@@ -28,7 +28,8 @@
             <tr>
               <th width="5%">ID</th>
               <th width="45%">コース名称</th>
-              <th width="50%"></th>
+              <th width="20%">所要時間</th>
+              <th width="30%"></th>
             </tr>
           </thead>
           <tbody>
@@ -40,6 +41,7 @@
                   </a>
                 </th>
                 <td>{{ str_limit($course->name,50) }}</td>
+                <td>{{ str_limit($course->required_time,50) }}</td>
                 @if($course->del_flg == false)
                 <td></td>
                 @endif
