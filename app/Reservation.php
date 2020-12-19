@@ -10,7 +10,7 @@ class Reservation extends Model
     protected $guarded = array('id');
 
     protected $dates = [
-      'date'
+      'start_date'
     ];
 
 
@@ -21,7 +21,7 @@ class Reservation extends Model
       'age' => 'required',
       'phonenumber' => 'required',
       'mail' => 'required',
-      'date' => 'required',
+      'start_date' => 'required',
       'course_id' => 'required',
       'symptom' => '',
     );
@@ -32,7 +32,7 @@ class Reservation extends Model
     }
 
     public function create($form){
-      $form['date'] = new Carbon($form['date']);
+      $form['start_date'] = new Carbon($form['start_date']);
       $this->fill($form);
       //症状がない場合、からのデータを送る
       if ($this->symptom == null){

@@ -59,7 +59,7 @@
             <div class="form-group row">
               <label class="col-md-2">予約希望日時</label>
               <div class="col-md-10">
-                <input type="datetime-local" class="form-control" name="date" value="{{ old('date') }}">
+                <input type="datetime-local" class="form-control" name="start_date" value="{{ old('start_date') }}">
               </div>
             </div>
             <div class="form-group row">

@@ -14,7 +14,7 @@ class AddEndDateToReservationsTable extends Migration
     public function up()
     {
         Schema::table('reservations', function (Blueprint $table) {
-          $table->datetime('end_date');
+          $table->datetime('end_date')->nullable();
         });
     }
 

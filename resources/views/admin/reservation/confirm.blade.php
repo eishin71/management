@@ -38,8 +38,8 @@
                 </tr>
                 <tr>
                   <th>予約希望日時：</th>
-                  <td>{{ $form['date'] }}</td>
-                  <input type="hidden" name="date" value="{{ $form['date'] }}">
+                  <td>{{ $form['start_date'] }}</td>
+                  <input type="hidden" name="start_date" value="{{ $form['start_date'] }}">
                 </tr>
                 <tr>
                   <th>コース：</th>

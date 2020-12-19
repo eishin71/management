@@ -15,7 +15,7 @@
     <div class="row">
       <?php $before_date = null; ?>
       @foreach($reservation as $r)
-        @if($before_date != $r->date->format('Y年m月d日'))
+        @if($before_date != $r->start_date->format('Y年m月d日'))
           <div class="list-reservation col-md-12 mx-auto">
               <div class="row">
                   <table class="table table-dark">
@@ -39,12 +39,12 @@
                               </a>
                             </th>
                             <td>{{ $r->name }}</td>
-                            <td>{{ $r->date->format('m月d日 H:i') }}</td>
+                            <td>{{ $r->start_date->format('m月d日 H:i') }}</td>
                             <td>{{ $r->course->name }}</td>
                             <td>{{ $r->phonenumber }}</td>
                             <td>{{ $r->mail }}</td>
                           </tr>
-                          <?php $before_date = $r->date->format('Y年m月d日'); ?>
+                          <?php $before_date = $r->start_date->format('Y年m月d日'); ?>
         @endforeach
                     </tbody>
                   </table>

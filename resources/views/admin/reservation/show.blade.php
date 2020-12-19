@@ -15,7 +15,7 @@
                   </tr>
                   <tr>
                     <th>予約希望日時：</th>
-                    <td>{{ ($r->date->format('Y年m月d日 H:i')) }}</td>
+                    <td>{{ ($r->start_date->format('Y年m月d日 H:i')) }}</td>
                   </tr>
                   <tr>
                     <th>コース：</th>

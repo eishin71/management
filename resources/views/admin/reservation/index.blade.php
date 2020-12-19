@@ -56,7 +56,7 @@
                                     <td>{{ str_limit($reservation->name, 20) }}</td>
                                     <td>{{ str_limit($reservation->phonenumber, 15) }}</td>
                                     <td>{{ str_limit($reservation->course->name, 20) }}</td>
-                                    <td>{{ str_limit($reservation->date->format('m月d日 H:i')) }}</td>
+                                    <td>{{ str_limit($reservation->start_date->format('m月d日 H:i')) }}</td>
                                     @if($reservation->status == '')
                                     <td></td>
                                     @endif

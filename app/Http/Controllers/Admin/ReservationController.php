@@ -23,20 +23,20 @@ class ReservationController extends Controller
     $this->validate($request,Reservation::$rules);
     $courses = Course::where('del_flg',false)->get();
     $form = $request->all();
-    $date =  new Carbon($form['date']);
-    $after_date = new Carbon($form['date']);
-    $before_date = new Carbon($form['date']);
+    $date =  new Carbon($form['start_date']);
+    $after_date = new Carbon($form['start_date']);
+    $before_date = new Carbon($form['start_date']);
     $after_date = $after_date->addHour();
     $before_date = $before_date->subHour();
     //　$date=17:00だったら
     // reservationテーブルから17:00~17:59までのレコードを取り出す
-    $have_reservation = Reservation::where('date','<',$after_date)
-                                   ->where('date','>=',$before_date)
+    $have_reservation = Reservation::where('start_date','<',$after_date)
+                                   ->where('start_date','>=',$before_date)
                                    ->exists();
     //exists = true,falseを返す
     if ($have_reservation) {
           $error_message = 'この時間はすでに予約が入っています';
-          return view('admin.reservation.create',['date' => $date, 'error_message' => $error_message,'courses' => $courses]);
+          return view('admin.reservation.create',['start_date' => $date, 'error_message' => $error_message,'courses' => $courses]);
     } else {
     $reservation = new Reservation;
     unset($form['_token']);
@@ -114,30 +114,30 @@ class ReservationController extends Controller
     public function schedule(Request $requeset)
     {
       $reservation = Reservation::where('status','予約確定')
-                                ->where('date','>=',Carbon::today())
-                                ->orderBy('date','asc')->get();
+                                ->where('start_date','>=',Carbon::today())
+                                ->orderBy('start_date','asc')->get();
       return view('admin.reservation.schedule',['reservation' => $reservation]);
     }
 
     public function confirm(Request $request){
       $courses = Course::where('del_flg',false)->get();
       $form = $request->all();
-      $date =  new Carbon($form['date']);
-      $after_date = new Carbon($form['date']);
-      $before_date = new Carbon($form['date']);
+      $date =  new Carbon($form['start_date']);
+      $after_date = new Carbon($form['start_date']);
+      $before_date = new Carbon($form['start_date']);
       $after_date = $after_date->addHour();
       $before_date = $before_date->subHour();
       //　$date=17:00だったら
       // reservationテーブルから17:00~17:59までのレコードを取り出す
-      $have_reservation = Reservation::where('date','<',$after_date)
-                                     ->where('date','>=',$before_date)
+      $have_reservation = Reservation::where('start_date','<',$after_date)
+                                     ->where('start_date','>=',$before_date)
                                      ->exists();
   //confirmのcontrollerにcreatecontrollerと似たような処理を書く
   //確認画面でエラー画面を出せるようにする
       //exists = true,falseを返す
       if ($have_reservation) {
             $error_message = 'この時間はすでに予約が入っています';
-            return view('admin.reservation.create',['date' => $date, 'error_message' => $error_message,'courses' => $courses]);
+            return view('admin.reservation.create',['start_date' => $date, 'error_message' => $error_message,'courses' => $courses]);
       } else {
       return view('admin.reservation.confirm',['form' => $form]);
        }
