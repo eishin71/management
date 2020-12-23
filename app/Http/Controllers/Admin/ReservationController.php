@@ -25,7 +25,9 @@ class ReservationController extends Controller
     $form = $request->all();
     $start_date =  new Carbon($form['start_date']);
 
-    $required_time = new Carbon(['required_time']);
+    $required = Course::find($request->course_id);
+    $required = $required->required_time;
+    $required_time = new Carbon($required);
     $required_hour = $required_time->hour;
     $required_minute = $required_time->minute;
 
@@ -133,7 +135,9 @@ class ReservationController extends Controller
       $form = $request->all();
       $start_date =  new Carbon($form['start_date']);
 
-      $required_time = new Carbon(['required_time']);
+      $required = Course::find($request->course_id);
+      $required = $required->required_time;
+      $required_time = new Carbon($required);
       $required_hour = $required_time->hour;
       $required_minute = $required_time->minute;
 
@@ -154,7 +158,8 @@ class ReservationController extends Controller
       //exists = true,falseを返す
       if ($have_reservation) {
             $error_message = 'この時間はすでに予約が入っています';
-            return view('admin.reservation.create',['start_date' => $start_date, 'error_message' => $error_message,'courses' => $courses,'required_time' =>$required_time,'end_date' => $end_date]);
+            return view('admin.reservation.create',
+            ['start_date' => $start_date, 'error_message' => $error_message,'courses' => $courses,'required_time' =>$required_time,'end_date' => $end_date]);
       } else {
       return view('admin.reservation.confirm',['form' => $form]);
        }
