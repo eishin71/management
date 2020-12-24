@@ -49,9 +49,16 @@ class ReservationController extends Controller
           return view('admin.reservation.create',['start_date' => $start_date, 'error_message' => $error_message,
                       'courses' => $courses,'required_time' =>$required_time,'end_date' => $end_date]);
     } else {
-    $reservation = new Reservation;
-    unset($form['_token']);
-    $reservation->create($form);
+      $reservation = new Reservation;
+      $reservation->name = $form['name'];
+      $reservation->age = $form['age'];
+      $reservation->phonenumber = $form['phonenumber'];
+      $reservation->mail = $form['mail'];
+      $reservation->start_date = $form['start_date'];
+      $reservation->course_id = $form['course_id'];
+      $reservation->symptom = $form['symptom'];
+      $reservation->end_date = $form['end_date'];
+      $reservation->save();
     return view('admin.reservation.receptionist');
     }
   }

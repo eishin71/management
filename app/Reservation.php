@@ -10,7 +10,8 @@ class Reservation extends Model
     protected $guarded = array('id');
 
     protected $dates = [
-      'start_date'
+      'start_date',
+
     ];
 
 
@@ -24,6 +25,7 @@ class Reservation extends Model
       'start_date' => 'required',
       'course_id' => 'required',
       'symptom' => '',
+      'end_date' => 'required'
     );
 
     public function course()
