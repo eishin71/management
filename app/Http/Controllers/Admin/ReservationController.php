@@ -57,7 +57,7 @@ class ReservationController extends Controller
       $reservation->start_date = $form['start_date'];
       $reservation->course_id = $form['course_id'];
       $reservation->symptom = $form['symptom'];
-      $reservation->end_date = $form['end_date'];
+      $reservation->end_date = $end_date;
       $reservation->save();
     return view('admin.reservation.receptionist');
     }

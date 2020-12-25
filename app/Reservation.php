@@ -25,7 +25,7 @@ class Reservation extends Model
       'start_date' => 'required',
       'course_id' => 'required',
       'symptom' => '',
-      'end_date' => 'required'
+      'end_date' => ''
     );
 
     public function course()
