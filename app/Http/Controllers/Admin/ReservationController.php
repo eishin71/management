@@ -54,7 +54,7 @@ class ReservationController extends Controller
       $reservation->age = $form['age'];
       $reservation->phonenumber = $form['phonenumber'];
       $reservation->mail = $form['mail'];
-      $reservation->start_date = $form['start_date'];
+      $reservation->start_date = new Carbon($form['start_date']);
       $reservation->course_id = $form['course_id'];
       $reservation->symptom = $form['symptom'];
       $reservation->end_date = $end_date;
