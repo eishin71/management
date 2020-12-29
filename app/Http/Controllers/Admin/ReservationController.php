@@ -51,6 +51,7 @@ class ReservationController extends Controller
     } else {
       $reservation = new Reservation;
       $reservation->name = $form['name'];
+      $reservation->sex = $form['sex'];
       $reservation->age = $form['age'];
       $reservation->phonenumber = $form['phonenumber'];
       $reservation->mail = $form['mail'];
