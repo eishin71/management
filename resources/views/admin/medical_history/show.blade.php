@@ -31,6 +31,17 @@
               <p>{{ $treatment->treatment }}</p>
        　   </div>
           </div>
+          <div class="form-group row">
+            <div class="human_figure_block">
+              <img class="human_figure" alt="施術箇所" src="{{ asset('/img/human_figure.jpg') }}">
+              @if ($treatment->part == "腰")
+              <div class="human_figure_part koshi"></div>
+              @else if ($treatment->part == "左腕")
+              <div class="human_figure_part"　style="top:200px; left:50px;"></div>
+
+              @endif
+            </div>
+          </div>
           </div>
         </div>
       </div>

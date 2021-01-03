@@ -16,16 +16,16 @@ class Reservation extends Model
 
 
 
-    public static $rules = array(
+    public static function rules($start_date,$course_id){
+      return array(
       'name' => 'required',
       'sex' => 'required',
       'age' => 'required',
       'phonenumber' => 'required',
       'mail' => 'required',
-      'start_date' => 'required',
+      'start_date' => ['required', new ReservationRule($start_date,$course_id)],
       'course_id' => 'required',
       'symptom' => '',
-      'end_date' => ''
     );
 
     public function course()

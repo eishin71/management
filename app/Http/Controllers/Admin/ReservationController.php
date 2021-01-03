@@ -138,38 +138,11 @@ class ReservationController extends Controller
       return view('admin.reservation.schedule',['reservation' => $reservation]);
     }
 
-    public function confirm(Request $request){
-      $courses = Course::where('del_flg',false)->get();
+    public function confirm(Request $request)
+    {
       $form = $request->all();
-      $start_date =  new Carbon($form['start_date']);
-
-      $required = Course::find($request->course_id);
-      $required = $required->required_time;
-      $required_time = new Carbon($required);
-      $required_hour = $required_time->hour;
-      $required_minute = $required_time->minute;
-
-
-      $end_date = new Carbon($form['start_date']);
-      $end_date->addHours($required_hour);
-      $end_date->addMinutes($required_minute);
-      //$after_date = new Carbon($form['start_date']);
-      //$before_date = new Carbon($form['start_date']);
-      //$after_date = $after_date->addHour();
-      //$before_date = $before_date->subHour();
-      //　$date=17:00だったら
-      // reservationテーブルから17:00~17:59までのレコードを取り出す
-      $have_reservation = Reservation::where('start_date','<=',$start_date)
-                                     ->where('end_date','>=',$start_date)
-                                     ->exists();
-  //確認画面でエラー画面を出せるようにする
-      //exists = true,falseを返す
-      if ($have_reservation) {
-            $error_message = 'この時間はすでに予約が入っています';
-            return view('admin.reservation.create',
-            ['start_date' => $start_date, 'error_message' => $error_message,'courses' => $courses,'required_time' =>$required_time,'end_date' => $end_date]);
-      } else {
+      $this->validate($request,Reservation::rules($form['start_date'],$form['course_id']));
+      $form = $request->all();
       return view('admin.reservation.confirm',['form' => $form]);
-       }
     }
 }
