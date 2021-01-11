@@ -20,35 +20,9 @@ class ReservationController extends Controller
 
     public function create(Request $request)
     {
-    $this->validate($request,Reservation::$rules);
-    $courses = Course::where('del_flg',false)->get();
     $form = $request->all();
-    $start_date =  new Carbon($form['start_date']);
-
-    $required = Course::find($request->course_id);
-    $required = $required->required_time;
-    $required_time = new Carbon($required);
-    $required_hour = $required_time->hour;
-    $required_minute = $required_time->minute;
-
-    $end_date = new Carbon($form['start_date']);
-    $end_date->addHours($required_hour);
-    $end_date->addMinutes($required_minute);
-    //$after_date = new Carbon($form['start_date']);
-    //$before_date = new Carbon($form['start_date']);
-    //$after_date = $after_date->addHour();
-    //$before_date = $before_date->subHour();
-    //　$date=17:00だったら
-    // reservationテーブルから17:00~17:59までのレコードを取り出す
-    $have_reservation = Reservation::where('start_date','<=',$start_date)
-                                   ->where('end_date','>=',$start_date)
-                                   ->exists();
+    $this->validate($request,Reservation::rules($form['start_date'],$form['course_id']));
     //exists = true,falseを返す
-    if ($have_reservation) {
-          $error_message = 'この時間はすでに予約が入っています';
-          return view('admin.reservation.create',['start_date' => $start_date, 'error_message' => $error_message,
-                      'courses' => $courses,'required_time' =>$required_time,'end_date' => $end_date]);
-    } else {
       $reservation = new Reservation;
       $reservation->name = $form['name'];
       $reservation->sex = $form['sex'];
@@ -58,10 +32,9 @@ class ReservationController extends Controller
       $reservation->start_date = new Carbon($form['start_date']);
       $reservation->course_id = $form['course_id'];
       $reservation->symptom = $form['symptom'];
-      $reservation->end_date = $end_date;
+      $reservation->end_date = Reservation::calcEndDate($form['start_date'],$form['course_id']);
       $reservation->save();
     return view('admin.reservation.receptionist');
-    }
   }
 
 
@@ -142,7 +115,6 @@ class ReservationController extends Controller
     {
       $form = $request->all();
       $this->validate($request,Reservation::rules($form['start_date'],$form['course_id']));
-      $form = $request->all();
       return view('admin.reservation.confirm',['form' => $form]);
     }
 }

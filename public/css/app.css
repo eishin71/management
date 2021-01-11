@@ -10918,11 +10918,340 @@ a.text-dark:focus {
   position: relative;
 }
 
-.human_figure_block 　.koshi {
-  width: 300px;
+.human_figure_block .Head {
+  width: 32px;
+  height: 20px;
+  top: 0px;
+  left: 57px;
+}
+
+.human_figure_block .Head_2 {
+  width: 32px;
+  height: 20px;
+  top: 0px;
+  left: 211px;
+}
+
+.human_figure_block .Neck {
+  width: 22px;
+  height: 15px;
+  top: 45px;
+  left: 62px;
+}
+
+.human_figure_block .Neck_2 {
+  width: 22px;
+  height: 15px;
+  top: 40px;
+  left: 216px;
+}
+
+.human_figure_block .Rightshoulder {
+  width: 34px;
+  height: 24px;
+  top: 50px;
+  left: 30px;
+}
+
+.human_figure_block .Rightshoulder_2 {
+  width: 34px;
+  height: 24px;
+  top: 50px;
+  left: 237px;
+}
+
+.human_figure_block .Leftshoulder {
+  width: 34px;
+  height: 24px;
+  top: 50px;
+  left: 82px;
+}
+
+.human_figure_block .Leftshoulder_2 {
+  width: 34px;
+  height: 24px;
+  top: 50px;
+  left: 183px;
+}
+
+.human_figure_block .Rightscapula {
+  width: 30px;
   height: 50px;
-  top: 200px;
-  left: 100px;
+  top: 55px;
+  left: 227px;
+}
+
+.human_figure_block .Leftscapula {
+  width: 30px;
+  height: 50px;
+  top: 55px;
+  left: 197px;
+}
+
+.human_figure_block .Breast {
+  width: 60px;
+  height: 50px;
+  top: 53px;
+  left: 43px;
+}
+
+.human_figure_block .Rightupperarm {
+  width: 20px;
+  height: 47px;
+  top: 70px;
+  left: 25px;
+}
+
+.human_figure_block .Rightupperarm_2 {
+  width: 20px;
+  height: 47px;
+  top: 70px;
+  left: 255px;
+}
+
+.human_figure_block .Leftupperarm {
+  width: 20px;
+  height: 47px;
+  top: 70px;
+  left: 101px;
+}
+
+.human_figure_block .Leftupperarm_2 {
+  width: 20px;
+  height: 47px;
+  top: 70px;
+  left: 179px;
+}
+
+.human_figure_block .Rightforearm {
+  width: 23px;
+  height: 47px;
+  top: 115px;
+  left: 15px;
+}
+
+.human_figure_block .Rightforearm_2 {
+  width: 23px;
+  height: 47px;
+  top: 115px;
+  left: 169px;
+}
+
+.human_figure_block .Leftforearm {
+  width: 23px;
+  height: 47px;
+  top: 115px;
+  left: 108px;
+}
+
+.human_figure_block .Leftforearm_2 {
+  width: 23px;
+  height: 47px;
+  top: 115px;
+  left: 262px;
+}
+
+.human_figure_block .Rightwrist {
+  width: 12px;
+  height: 10px;
+  top: 157px;
+  left: 12px;
+}
+
+.human_figure_block .Rightwrist_2 {
+  width: 12px;
+  height: 10px;
+  top: 157px;
+  left: 276px;
+}
+
+.human_figure_block .Leftwrist {
+  width: 12px;
+  height: 10px;
+  top: 157px;
+  left: 122px;
+}
+
+.human_figure_block .Leftwrist_2 {
+  width: 12px;
+  height: 10px;
+  top: 157px;
+  left: 166px;
+}
+
+.human_figure_block .Righthand {
+  width: 25px;
+  height: 30px;
+  top: 166px;
+  left: 0px;
+}
+
+.human_figure_block .Righthand_2 {
+  width: 25px;
+  height: 30px;
+  top: 166px;
+  left: 275px;
+}
+
+.human_figure_block .Lefthand {
+  width: 25px;
+  height: 30px;
+  top: 166px;
+  left: 121px;
+}
+
+.human_figure_block .Lefthand_2 {
+  width: 25px;
+  height: 30px;
+  top: 166px;
+  left: 154px;
+}
+
+.human_figure_block .Waist {
+  width: 64px;
+  height: 50px;
+  top: 114px;
+  left: 195px;
+}
+
+.human_figure_block .back {
+  width: 64px;
+  height: 70px;
+  top: 50px;
+  left: 195px;
+}
+
+.human_figure_block .Hip {
+  width: 28px;
+  height: 17px;
+  top: 163px;
+  left: 58px;
+}
+
+.human_figure_block .Belly {
+  width: 62px;
+  height: 50px;
+  top: 100px;
+  left: 42px;
+}
+
+.human_figure_block .Butt {
+  width: 66px;
+  height: 17px;
+  top: 163px;
+  left: 194px;
+}
+
+.human_figure_block .Rightthighs {
+  width: 34px;
+  height: 85px;
+  top: 145px;
+  left: 39px;
+}
+
+.human_figure_block .Rightthighs_2 {
+  width: 32px;
+  height: 51px;
+  top: 179px;
+  left: 229px;
+}
+
+.human_figure_block .Leftthighs {
+  width: 34px;
+  height: 85px;
+  top: 145px;
+  left: 73px;
+}
+
+.human_figure_block .Leftthighs_2 {
+  width: 32px;
+  height: 51px;
+  top: 179px;
+  left: 193px;
+}
+
+.human_figure_block .Rightcalf {
+  width: 25px;
+  height: 70px;
+  top: 229px;
+  left: 46px;
+}
+
+.human_figure_block .Rightcalf_2 {
+  width: 25px;
+  height: 77px;
+  top: 229px;
+  left: 200px;
+}
+
+.human_figure_block .Leftcalf {
+  width: 25px;
+  height: 70px;
+  top: 229px;
+  left: 74px;
+}
+
+.human_figure_block .Leftcalf_2 {
+  width: 25px;
+  height: 77px;
+  top: 229px;
+  left: 229px;
+}
+
+.human_figure_block .Rightankle {
+  width: 14px;
+  height: 12px;
+  top: 298px;
+  left: 54px;
+}
+
+.human_figure_block .Rightankle_2 {
+  width: 13px;
+  height: 12px;
+  top: 305px;
+  left: 232px;
+}
+
+.human_figure_block .Leftankle {
+  width: 14px;
+  height: 12px;
+  top: 298px;
+  left: 77px;
+}
+
+.human_figure_block .Leftankle_2 {
+  width: 13px;
+  height: 12px;
+  top: 305px;
+  left: 209px;
+}
+
+.human_figure_block .Rigthleg {
+  width: 24px;
+  height: 24px;
+  top: 308px;
+  left: 44px;
+}
+
+.human_figure_block .Rigthleg_2 {
+  width: 23px;
+  height: 26px;
+  top: 305px;
+  left: 232px;
+}
+
+.human_figure_block .Leftleg {
+  width: 24px;
+  height: 24px;
+  top: 308px;
+  left: 77px;
+}
+
+.human_figure_block .Leftleg_2 {
+  width: 25px;
+  height: 26px;
+  top: 305px;
+  left: 197px;
 }
 
 .human_figure_part {

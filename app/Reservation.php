@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
+use App\Rules\ReservationRule;
+
 
 class Reservation extends Model
 {
@@ -26,7 +28,21 @@ class Reservation extends Model
       'start_date' => ['required', new ReservationRule($start_date,$course_id)],
       'course_id' => 'required',
       'symptom' => '',
-    );
+      );
+    }
+
+    public static function calcEndDate($start_date,$course_id){
+      $course = Course::find($course_id);
+      $required_time = new Carbon($course->required_time);
+      $required_hour = $required_time->hour;
+      $required_minute = $required_time->minute;
+
+      $end_date = new Carbon($start_date);
+      $end_date->addHours($required_hour);
+      $end_date->addMinutes($required_minute);
+
+      return $end_date;
+    }
 
     public function course()
     {

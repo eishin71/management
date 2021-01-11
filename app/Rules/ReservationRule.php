@@ -3,6 +3,9 @@
 namespace App\Rules;
 
 use Illuminate\Contracts\Validation\Rule;
+use Carbon\Carbon;
+use App\Course;
+use App\Reservation;
 
 class ReservationRule implements Rule
 {
@@ -18,7 +21,7 @@ class ReservationRule implements Rule
         $this->start_date = new Carbon($start_date);
 
         $course = Course::find($course_id);
-        $required_time = new Cabon($course->required_time);
+        $required_time = new Carbon($course->required_time);
         $required_hour = $required_time->hour;
         $required_minute = $required_time->minute;
 
@@ -34,6 +37,8 @@ class ReservationRule implements Rule
      * @param  mixed  $value
      * @return bool
      */
+
+    //予約が重複して
     public function passes($attribute, $value)
     {
         $not_conflict_reservation = Reservation::where('start_date','<=',$this->start_date)
@@ -49,6 +54,6 @@ class ReservationRule implements Rule
      */
     public function message()
     {
-        return 'The validation error message.';
+        return 'この時間に予約することはできません。';
     }
 }
