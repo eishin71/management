@@ -37,38 +37,90 @@
         <div class="form-group row">
           <label class="col-md-2">施術箇所</label>
           <div class="col-md-10">
-            <select name="part">
-              <option value=""></option>
-              <option value="頭">頭</option>
-              <option value="首">首</option>
-              <option value="右肩">右肩</option>
-              <option value="左肩">左肩</option>
-              <option value="右肩甲骨">右肩甲骨</option>
-              <option value="左肩甲骨">左肩甲骨</option>
-              <option value="胸">胸</option>
-              <option value="右上腕">右上腕</option>
-              <option value="左上腕">左上腕</option>
-              <option value="右前腕">右前腕</option>
-              <option value="左前腕">左前腕</option>
-              <option value="右手首">右手首</option>
-              <option value="左手首">左手首</option>
-              <option value="右手">右手</option>
-              <option value="左手">左手</option>
-              <option value="腰">腰</option>
-              <option value="背中">背中</option>
-              <option value="股関節">股関節</option>
-              <option value="腹">腹</option>
-              <option value="尻">尻</option>
-              <option value="右太もも">右太もも</option>
-              <option value="左太もも">左太もも</option>
-              <option value="右ふくらはぎ">右ふくらはぎ</option>
-              <option value="左ふくらはぎ">左ふくらはぎ</option>
-              <option value="右足首">右足首</option>
-              <option value="左足首">左足首</option>
-              <option value="右足">右足</option>
-              <option value="左足">左足</option>
-
-            </select>
+            <label>
+  　　　　　　　<input type="checkbox" name="part[]" value="頭">頭
+　　　　　　　</label>
+　　　　　　　<label>
+　　　　　　　　<input type="checkbox" name="part[]" value="首">首
+　　　　　　　</label>
+　　　　　　　<label>
+　　　　　　　　<input type="checkbox" name="part[]" value="右肩">右肩
+　　　　　　　</label>
+　　　　　　　<label>
+　　　　　　　　<input type="checkbox" name="part[]" value="左肩">左肩
+　　　　　　　</label>
+　　　　　　　<label>
+　　　　　　　　<input type="checkbox" name="part[]" value="右肩甲骨">右肩甲骨
+　　　　　　　</label>
+　　　　　　　<label>
+　　　　　　　　<input type="checkbox" name="part[]" value="左肩甲骨">左肩甲骨
+　　　　　　　</label>
+　　　　　　　<label>
+　　　　　　　　<input type="checkbox" name="part[]" value="胸">胸
+　　　　　　　</label>
+　　　　　　　<label>
+　　　　　　　　<input type="checkbox" name="part[]" value="右上腕">右上腕
+　　　　　　　</label>
+　　　　　　　<label>
+　　　　　　　　<input type="checkbox" name="part[]" value="左上腕">左上腕
+　　　　　　　</label>
+　　　　　　　<label>
+　　　　　　　　<input type="checkbox" name="part[]" value="右前腕">右前腕
+　　　　　　　</label>
+　　　　　　　<label>
+　　　　　　　　<input type="checkbox" name="part[]" value="左前腕">左前腕
+　　　　　　　</label>
+　　　　　　　<label>
+　　　　　　　　<input type="checkbox" name="part[]" value="右手首">右手首
+　　　　　　  </label>
+　　　　　　　<label>
+　　　　　　　　<input type="checkbox" name="part[]" value="左手首">左手首
+　　　　　　  </label>
+　　　　　　　<label>
+　　　　　　　　<input type="checkbox" name="part[]" value="右手">右手
+　　　　　　  </label>
+　　　　　　　<label>
+　　　　　　　　<input type="checkbox" name="part[]" value="左手">左手
+　　　　　　  </label>
+　　　　　　　<label>
+　　　　　　　　<input type="checkbox" name="part[]" value="腰">腰
+　　　　　　  </label>
+　　　　　　　<label>
+　　　　　　　　<input type="checkbox" name="part[]" value="背中">背中
+　　　　　　  </label>
+　　　　　　　<label>
+　　　　　　　　<input type="checkbox" name="part[]" value="股関節">股関節
+　　　　　　  </label>
+　　　　　　　<label>
+　　　　　　　　<input type="checkbox" name="part[]" value="腹">腹
+　　　　　　  </label>
+　　　　　　　<label>
+　　　　　　　　<input type="checkbox" name="part[]" value="尻">尻
+　　　　　　  </label>
+　　　　　　　<label>
+　　　　　　　　<input type="checkbox" name="part[]" value="右太もも">右太もも
+　　　　　　  </label>
+　　　　　　　<label>
+　　　　　　　　<input type="checkbox" name="part[]" value="左太もも">左太もも
+　　　　　　  </label>
+　　　　　　　<label>
+　　　　　　　　<input type="checkbox" name="part[]" value="右ふくらはぎ">右ふくらはぎ
+　　　　　　  </label>
+　　　　　　　<label>
+　　　　　　　　<input type="checkbox" name="part[]" value="左ふくらはぎ">左ふくらはぎ
+　　　　　　  </label>
+　　　　　　　<label>
+　　　　　　　　<input type="checkbox" name="part[]" value="右足首">右足首
+　　　　　　  </label>
+　　　　　　　<label>
+　　　　　　　　<input type="checkbox" name="part[]" value="左足首">左足首
+　　　　　　  </label>
+　　　　　　　<label>
+　　　　　　　　<input type="checkbox" name="part[]" value="右足">右足
+　　　　　　  </label>
+　　　　　　　<label>
+　　　　　　　　<input type="checkbox" name="part[]" value="左足">左足
+　　　　　　  </label>
           </div>
         </div>
         <div class="form-group row">
