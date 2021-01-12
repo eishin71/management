@@ -15,9 +15,9 @@ class CreateTreatmentsTable extends Migration
     {
         Schema::create('treatments', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('course_id')->nullable;
-            $table->string('part')->nullable;
-            $table->text('treatment')->nullable;
+            $table->integer('course_id')->nullable();
+            $table->string('part')->nullable();
+            $table->text('treatment')->nullable();
             $table->date('treatment_date');
             $table->integer('client_id');
             $table->timestamps();
