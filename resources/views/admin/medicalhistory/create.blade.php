@@ -4,7 +4,7 @@
   <div class="container">
     <h2>問診票の入力</h2>
     <p></p>
-    <form action="{{ action('Admin\Medical_historyController@create') }}" method="post">
+    <form action="{{ action('Admin\MedicalHistoryController@create') }}" method="post">
       <input type="hidden" name="client_id" value="{{ $id }}">
       <div class="form-group row">
         <label class="col-md-2">来店日</label>

@@ -32,8 +32,8 @@
               {{  csrf_field()}}
               <input type="submit" class="btn btn-danger" value="詳細">
             </form>
-            <a href="{{ action('Admin\Medical_historyController@add',['id' => $client->id]) }}">問診票の入力</a>
-            <a href="{{ action('Admin\Medical_historyController@index',['id' => $client->id]) }}">問診票一覧</a>
+            <a href="{{ action('Admin\MedicalHistoryController@add',['id' => $client->id]) }}">問診票の入力</a>
+            <a href="{{ action('Admin\MedicalHistoryController@index',['id' => $client->id]) }}">問診票一覧</a>
           </div>
         </div>
       </div>

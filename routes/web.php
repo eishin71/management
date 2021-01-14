@@ -52,13 +52,13 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'],function () {
     Route::post('question/{id}/hidden','Admin\QuestionController@hidden');
     Route::post('question/{id}/return','Admin\QuestionController@return');
 
-    Route::get('medical_history/{id}/create','Admin\Medical_historyController@add');
-    Route::post('medical_history/create','Admin\Medical_historyController@create');
-    Route::get('medical_history/{id}','Admin\Medical_historyController@index');
-    Route::get('medical_history/{client_id}/{answer_date}', 'Admin\Medical_historyController@show');
-    Route::get('medical_history/{id}/edit','Admin\Medical_historyController@edit');
-    Route::get('medical_history/{id}/details','Admin\Medical_historyController@details');
-    Route::get('medical_history/{id}/update','Admin\Medical_historyController@update');
+    Route::get('medicalhistory/{id}/create','Admin\MedicalHistoryController@add');
+    Route::post('medicalhistory/create','Admin\MedicalHistoryController@create');
+    Route::get('medicalhistory/{id}','Admin\MedicalHistoryController@index');
+    Route::get('medicalhistory/{client_id}/{answer_date}', 'Admin\MedicalHistoryController@show');
+    Route::get('medicalhistory/{id}/edit','Admin\MedicalHistoryController@edit');
+    Route::get('medicalhistory/{id}/details','Admin\MedicalHistoryController@details');
+    Route::get('medicalhistory/{id}/update','Admin\MedicalHistoryController@update');
 
 
 });

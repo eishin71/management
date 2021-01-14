@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Medical_history;
+use App\MedicalHistory;
 use App\Question;
 use App\Answer;
 use App\Client;
@@ -12,14 +12,14 @@ use App\Course;
 use App\Treatment;
 use Carbon\Carbon;
 
-class Medical_historyController extends Controller
+class MedicalHistoryController extends Controller
 {
     public function add(Request $request, $id)
     {
         $questions = Question::where('del_flg', false)->get();
         $courses = Course::where('del_flg', false)->get();
 
-        return view('admin.medical_history.create', compact('questions', 'id', 'courses'));
+        return view('admin.medicalhistory.create', compact('questions', 'id', 'courses'));
     }
 
     public function create(Request $request)
@@ -65,7 +65,7 @@ class Medical_historyController extends Controller
             $answer_date_array[$i] = new Carbon($answer_date);
         }
 
-        return view('admin.medical_history.index', ['answers' => $answers,'clients' => $clients,'answer_date_array' => $answer_date_array,'answer' => $answer,'client_id' => $id]);
+        return view('admin.medicalhistory.index', ['answers' => $answers,'clients' => $clients,'answer_date_array' => $answer_date_array,'answer' => $answer,'client_id' => $id]);
     }
 
     public function show(Request $request, $client_id, $answer_date)
@@ -80,7 +80,7 @@ class Medical_historyController extends Controller
                           ->where('treatment_date', $answer_date)
                           ->first();
 
-        return view('admin.medical_history.show', [ 'answers' => $answers,'answer_date' => $answer_date,'treatment' => $treatment ]);
+        return view('admin.medicalhistory.show', [ 'answers' => $answers,'answer_date' => $answer_date,'treatment' => $treatment ]);
     }
 
     public function edit(Request $request, $id)
@@ -89,13 +89,13 @@ class Medical_historyController extends Controller
         if (empty($answer)) {
             abort(404);
         }
-        return view('admin.medical_history.edit', ['answer' => $answer,'id' => $id]);
+        return view('admin.medicalhistory.edit', ['answer' => $answer,'id' => $id]);
     }
 
     public function details(Request $request, $id)
     {
         $answer = Answer::find($id);
-        return view('admin.medical_history.details', ['answer' => $answer,'id' => $id]);
+        return view('admin.medicalhistory.details', ['answer' => $answer,'id' => $id]);
     }
 
     public function update(Request $request, $id)
