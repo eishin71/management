@@ -7,7 +7,7 @@
   <h2>予約フォーム　確認画面</h2>
     <div class="row">
       <div class="list-reservation col-md-7 mx-auto">
-        <form action="{{ action('Admin\ReservationController@create') }}" method="post">
+        <form action="{{ action('ReservationController@create') }}" method="post">
           <div class="row">
             <table class="table table-dark">
               <tbody>
@@ -56,7 +56,7 @@
             {{ csrf_field() }}
             <input type="submit" class="btn btn-primary" value="送信">
             </form>
-            <form action="{{ action('Admin\ReservationController@add') }}"
+            <form action="{{ action('ReservationController@add') }}"
             method="get">
             {{ csrf_field() }}
             <input type="submit" class="btn btn-danger" value="フォームに戻る">

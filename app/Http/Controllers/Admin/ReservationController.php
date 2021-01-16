@@ -10,34 +10,6 @@ use Carbon\Carbon;
 
 class ReservationController extends Controller
 {
-    public function add()
-    {
-        //コース一覧を入れておく変数
-        $courses = Course::where('del_flg', false)->get();
-        $error_message = '';
-        return view('admin.reservation.create', compact('courses', 'error_message'));
-    }
-
-    public function create(Request $request)
-    {
-        $form = $request->all();
-        $this->validate($request, Reservation::rules($form['start_date'], $form['course_id']));
-        //exists = true,falseを返す
-        $reservation = new Reservation;
-        $reservation->name = $form['name'];
-        $reservation->sex = $form['sex'];
-        $reservation->age = $form['age'];
-        $reservation->phonenumber = $form['phonenumber'];
-        $reservation->mail = $form['mail'];
-        $reservation->start_date = new Carbon($form['start_date']);
-        $reservation->course_id = $form['course_id'];
-        $reservation->symptom = $form['symptom'];
-        $reservation->end_date = Reservation::calcEndDate($form['start_date'], $form['course_id']);
-        $reservation->save();
-        return view('admin.reservation.receptionist');
-    }
-
-
     public function receptionist(Request $request)
     {
         return view('admin.reservation.receptionist');
@@ -111,12 +83,5 @@ class ReservationController extends Controller
                                 ->where('start_date', '>=', Carbon::today())
                                 ->orderBy('start_date', 'asc')->get();
         return view('admin.reservation.schedule', ['reservation' => $reservation]);
-    }
-
-    public function confirm(Request $request)
-    {
-        $form = $request->all();
-        $this->validate($request, Reservation::rules($form['start_date'], $form['course_id']));
-        return view('admin.reservation.confirm', ['form' => $form]);
     }
 }

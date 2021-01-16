@@ -7,8 +7,8 @@ use App\Http\Controllers\Controller;
 
 class StartController extends Controller
 {
-  public function index()
-  {
-    return view('admin.start.index');
-  }
+    public function index()
+    {
+        return view('admin.start.index');
+    }
 }
