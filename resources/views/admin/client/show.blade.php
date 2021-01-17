@@ -30,10 +30,16 @@
             </table>
             <form action="{{ action('Admin\ClientController@details',['id' => $client->id]) }}" method="get">
               {{  csrf_field()}}
-              <input type="submit" class="btn btn-danger" value="詳細">
+              <input type="submit" class="btn btn-primary" value="詳細">
             </form>
-            <a href="{{ action('Admin\MedicalHistoryController@add',['id' => $client->id]) }}">問診票の入力</a>
-            <a href="{{ action('Admin\MedicalHistoryController@index',['id' => $client->id]) }}">問診票一覧</a>
+              <form action="{{ action('Admin\MedicalHistoryController@add',['id' => $client->id]) }}" method="get">
+                {{  csrf_field()}}
+                <input type="submit" class="btn btn-primary" value="問診票の入力">
+              </form>
+              <form action="{{ action('Admin\MedicalHistoryController@index',['id' => $client->id]) }}" method="get">
+                {{  csrf_field()}}
+                <input type="submit" class="btn btn-primary" value="問診票一覧">
+              </form>
           </div>
         </div>
       </div>
