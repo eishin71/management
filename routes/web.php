@@ -16,7 +16,7 @@
   Route::get('reservation/confirm', 'ReservationController@add');
   Route::post('reservation/confirm', 'ReservationController@confirm');
 
-Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
+Route::group(['prefix' => 'admin','middleware' => ['auth', 'can:admin']], function () {
     Route::get('start/', 'Admin\StartController@index');
 
     Route::post('reservation/receptionist', 'Admin\ReservationController@receptionist');
@@ -55,9 +55,9 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
     Route::post('medicalhistory/create', 'Admin\MedicalHistoryController@create');
     Route::get('medicalhistory/{id}', 'Admin\MedicalHistoryController@index');
     Route::get('medicalhistory/{client_id}/{answer_date}', 'Admin\MedicalHistoryController@show');
-    Route::get('medicalhistory/{id}/edit', 'Admin\MedicalHistoryController@edit');
-    Route::get('medicalhistory/{id}/details', 'Admin\MedicalHistoryController@details');
-    Route::get('medicalhistory/{id}/update', 'Admin\MedicalHistoryController@update');
+    Route::get('medicalhistory/{client_id}/{answer_date}/edit', 'Admin\MedicalHistoryController@edit');
+    Route::get('medicalhistory/{client_id}/{answer_date}/details', 'Admin\MedicalHistoryController@details');
+    Route::get('medicalhistory/{client_id}/{answer_date}/update', 'Admin\MedicalHistoryController@update');
 });
 
 

@@ -1,356 +1,358 @@
 //人体図の大きさ
+
 .human_figure {
- width: 100%;
- height:  auto;
- position: absolute;
- top: 0;
- left: 0;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 //人体図の画像の枠
+
 .human_figure_block {
- width: 300px;
- height:  auto;
- position: relative;
+    width: 300px;
+    height: 340px;
+    position: relative;
 
- .Head {
- width: 32px;
- height: 20px;
- top: 0px;
- left: 57px;
- }
+    .Head {
+        width: 32px;
+        height: 20px;
+        top: 0;
+        left: 57px;
+    }
 
- .Head_2 {
- width: 32px;
- height: 20px;
- top: 0px;
- left: 211px;
- }
+    .Head_2 {
+        width: 32px;
+        height: 20px;
+        top: 0;
+        left: 211px;
+    }
 
- .Neck {
- width: 22px;
- height: 15px;
- top: 45px;
- left: 62px;
- }
+    .Neck {
+        width: 22px;
+        height: 15px;
+        top: 45px;
+        left: 62px;
+    }
 
- .Neck_2 {
- width: 22px;
- height: 15px;
- top: 40px;
- left: 216px;
- }
+    .Neck_2 {
+        width: 22px;
+        height: 15px;
+        top: 40px;
+        left: 216px;
+    }
 
- .Rightshoulder {
- width: 34px;
- height: 24px;
- top: 50px;
- left: 30px;
- }
+    .Rightshoulder {
+        width: 34px;
+        height: 24px;
+        top: 50px;
+        left: 30px;
+    }
 
- .Rightshoulder_2 {
- width: 34px;
- height: 24px;
- top: 50px;
- left: 237px;
- }
+    .Rightshoulder_2 {
+        width: 34px;
+        height: 24px;
+        top: 50px;
+        left: 237px;
+    }
 
- .Leftshoulder {
- width: 34px;
- height: 24px;
- top: 50px;
- left: 82px;
- }
+    .Leftshoulder {
+        width: 34px;
+        height: 24px;
+        top: 50px;
+        left: 82px;
+    }
 
- .Leftshoulder_2 {
- width: 34px;
- height: 24px;
- top: 50px;
- left: 183px;
- }
+    .Leftshoulder_2 {
+        width: 34px;
+        height: 24px;
+        top: 50px;
+        left: 183px;
+    }
 
- .Rightscapula {
- width: 30px;
- height: 50px;
- top: 55px;
- left: 227px;
- }
+    .Rightscapula {
+        width: 30px;
+        height: 50px;
+        top: 55px;
+        left: 227px;
+    }
 
- .Leftscapula {
- width: 30px;
- height: 50px;
- top: 55px;
- left: 197px;
-}
+    .Leftscapula {
+        width: 30px;
+        height: 50px;
+        top: 55px;
+        left: 197px;
+    }
 
- .Breast {
- width: 60px;
- height: 50px;
- top: 53px;
- left: 43px;
- }
+    .Breast {
+        width: 60px;
+        height: 50px;
+        top: 53px;
+        left: 43px;
+    }
 
- .Rightupperarm {
- width: 20px;
- height: 47px;
- top: 70px;
- left: 25px;
- }
+    .Rightupperarm {
+        width: 20px;
+        height: 47px;
+        top: 70px;
+        left: 25px;
+    }
 
- .Rightupperarm_2 {
- width: 20px;
- height: 47px;
- top: 70px;
- left: 255px;
- }
+    .Rightupperarm_2 {
+        width: 20px;
+        height: 47px;
+        top: 70px;
+        left: 255px;
+    }
 
- .Leftupperarm {
- width: 20px;
- height: 47px;
- top: 70px;
- left: 101px;
- }
+    .Leftupperarm {
+        width: 20px;
+        height: 47px;
+        top: 70px;
+        left: 101px;
+    }
 
- .Leftupperarm_2 {
- width: 20px;
- height: 47px;
- top: 70px;
- left: 179px;
- }
+    .Leftupperarm_2 {
+        width: 20px;
+        height: 47px;
+        top: 70px;
+        left: 179px;
+    }
 
- .Rightforearm {
-  width: 23px;
-  height: 47px;
-  top: 115px;
-  left: 15px;
- }
+    .Rightforearm {
+        width: 23px;
+        height: 47px;
+        top: 115px;
+        left: 15px;
+    }
 
- .Rightforearm_2 {
-  width: 23px;
-  height: 47px;
-  top: 115px;
-  left: 169px;
- }
+    .Rightforearm_2 {
+        width: 23px;
+        height: 47px;
+        top: 115px;
+        left: 169px;
+    }
 
- .Leftforearm {
-  width: 23px;
-  height: 47px;
-  top: 115px;
-  left: 108px;
- }
+    .Leftforearm {
+        width: 23px;
+        height: 47px;
+        top: 115px;
+        left: 108px;
+    }
 
- .Leftforearm_2 {
-  width: 23px;
-  height: 47px;
-  top: 115px;
-  left: 262px;
- }
+    .Leftforearm_2 {
+        width: 23px;
+        height: 47px;
+        top: 115px;
+        left: 262px;
+    }
 
- .Rightwrist {
- width: 12px;
- height: 10px;
- top: 157px;
- left: 12px;
- }
+    .Rightwrist {
+        width: 12px;
+        height: 10px;
+        top: 157px;
+        left: 12px;
+    }
 
- .Rightwrist_2 {
- width: 12px;
- height: 10px;
- top: 157px;
- left: 276px;
- }
+    .Rightwrist_2 {
+        width: 12px;
+        height: 10px;
+        top: 157px;
+        left: 276px;
+    }
 
- .Leftwrist {
-  width: 12px;
-  height: 10px;
-  top: 157px;
-  left: 122px;
- }
+    .Leftwrist {
+        width: 12px;
+        height: 10px;
+        top: 157px;
+        left: 122px;
+    }
 
- .Leftwrist_2 {
- width: 12px;
- height: 10px;
- top: 157px;
- left: 166px;
- }
+    .Leftwrist_2 {
+        width: 12px;
+        height: 10px;
+        top: 157px;
+        left: 166px;
+    }
 
- .Righthand {
- width: 25px;
- height: 30px;
- top: 166px;
- left: 0px;
- }
+    .Righthand {
+        width: 25px;
+        height: 30px;
+        top: 166px;
+        left: 0;
+    }
 
- .Righthand_2 {
- width: 25px;
- height: 30px;
- top: 166px;
- left: 275px;
- }
+    .Righthand_2 {
+        width: 25px;
+        height: 30px;
+        top: 166px;
+        left: 275px;
+    }
 
- .Lefthand {
- width: 25px;
- height: 30px;
- top: 166px;
- left: 121px;
- }
+    .Lefthand {
+        width: 25px;
+        height: 30px;
+        top: 166px;
+        left: 121px;
+    }
 
- .Lefthand_2 {
- width: 25px;
- height: 30px;
- top: 166px;
- left: 154px;
- }
+    .Lefthand_2 {
+        width: 25px;
+        height: 30px;
+        top: 166px;
+        left: 154px;
+    }
 
- .Waist {
-  width: 64px;
-  height: 50px;
-  top: 114px;
-  left: 195px;
- }
+    .Waist {
+        width: 64px;
+        height: 50px;
+        top: 114px;
+        left: 195px;
+    }
 
- .back {
-  width: 64px;
-  height: 70px;
-  top: 50px;
-  left: 195px;
- }
+    .back {
+        width: 64px;
+        height: 70px;
+        top: 50px;
+        left: 195px;
+    }
 
- .Hip {
- width: 28px;
- height: 17px;
- top: 163px;
- left: 58px;
- }
+    .Hip {
+        width: 28px;
+        height: 17px;
+        top: 163px;
+        left: 58px;
+    }
 
- .Belly {
- width: 62px;
- height: 50px;
- top: 100px;
- left: 42px;
- }
+    .Belly {
+        width: 62px;
+        height: 50px;
+        top: 100px;
+        left: 42px;
+    }
 
- .Butt {
-  width: 66px;
-  height: 17px;
-  top: 163px;
-  left: 194px;
- }
+    .Butt {
+        width: 66px;
+        height: 17px;
+        top: 163px;
+        left: 194px;
+    }
 
- .Rightthighs {
- width: 34px;
- height: 85px;
- top: 145px;
- left: 39px;
- }
+    .Rightthighs {
+        width: 34px;
+        height: 85px;
+        top: 145px;
+        left: 39px;
+    }
 
- .Rightthighs_2 {
- width: 32px;
- height: 51px;
- top: 179px;
- left: 229px;
- }
+    .Rightthighs_2 {
+        width: 32px;
+        height: 51px;
+        top: 179px;
+        left: 229px;
+    }
 
- .Leftthighs {
- width: 34px;
- height: 85px;
- top: 145px;
- left: 73px;
- }
+    .Leftthighs {
+        width: 34px;
+        height: 85px;
+        top: 145px;
+        left: 73px;
+    }
 
- .Leftthighs_2 {
-  width: 32px;
-  height: 51px;
-  top: 179px;
-  left: 193px;
- }
+    .Leftthighs_2 {
+        width: 32px;
+        height: 51px;
+        top: 179px;
+        left: 193px;
+    }
 
- .Rightcalf {
- width: 25px;
- height: 70px;
- top: 229px;
- left: 46px;
- }
+    .Rightcalf {
+        width: 25px;
+        height: 70px;
+        top: 229px;
+        left: 46px;
+    }
 
- .Rightcalf_2 {
- width: 25px;
- height: 77px;
- top: 229px;
- left: 200px;
- }
+    .Rightcalf_2 {
+        width: 25px;
+        height: 77px;
+        top: 229px;
+        left: 200px;
+    }
 
- .Leftcalf {
- width: 25px;
- height: 70px;
- top: 229px;
- left: 74px;
- }
+    .Leftcalf {
+        width: 25px;
+        height: 70px;
+        top: 229px;
+        left: 74px;
+    }
 
- .Leftcalf_2 {
- width: 25px;
- height: 77px;
- top: 229px;
- left: 229px;
- }
+    .Leftcalf_2 {
+        width: 25px;
+        height: 77px;
+        top: 229px;
+        left: 229px;
+    }
 
- .Rightankle {
- width: 14px;
- height: 12px;
- top: 298px;
- left: 54px;
- }
+    .Rightankle {
+        width: 14px;
+        height: 12px;
+        top: 298px;
+        left: 54px;
+    }
 
- .Rightankle_2 {
- width: 13px;
- height: 12px;
- top: 305px;
- left: 232px;
- }
+    .Rightankle_2 {
+        width: 13px;
+        height: 12px;
+        top: 305px;
+        left: 232px;
+    }
 
- .Leftankle {
- width: 14px;
- height: 12px;
- top: 298px;
- left: 77px;
- }
+    .Leftankle {
+        width: 14px;
+        height: 12px;
+        top: 298px;
+        left: 77px;
+    }
 
- .Leftankle_2 {
- width: 13px;
- height: 12px;
- top: 305px;
- left: 209px;
- }
+    .Leftankle_2 {
+        width: 13px;
+        height: 12px;
+        top: 305px;
+        left: 209px;
+    }
 
- .Rigthleg {
- width: 24px;
- height: 24px;
- top: 308px;
- left: 44px;
- }
+    .Rigthleg {
+        width: 24px;
+        height: 24px;
+        top: 308px;
+        left: 44px;
+    }
 
- .Rigthleg_2 {
- width: 23px;
- height: 26px;
- top: 305px;
- left: 232px;
- }
+    .Rigthleg_2 {
+        width: 23px;
+        height: 26px;
+        top: 305px;
+        left: 232px;
+    }
 
- .Leftleg {
- width: 24px;
- height: 24px;
- top: 308px;
- left: 77px;
- }
+    .Leftleg {
+        width: 24px;
+        height: 24px;
+        top: 308px;
+        left: 77px;
+    }
 
- .Leftleg_2 {
- width: 25px;
- height: 26px;
- top: 305px;
- left: 197px;
- }
-
+    .Leftleg_2 {
+        width: 25px;
+        height: 26px;
+        top: 305px;
+        left: 197px;
+    }
 }
 //人体図を赤く表示する
+
 .human_figure_part {
- position: absolute;
- background: rgba(255,0,0,0.5);
+    position: absolute;
+    background: rgba(255,0,0,0.5);
 }

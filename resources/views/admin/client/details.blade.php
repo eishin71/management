@@ -56,7 +56,7 @@
       <p></p>
       <form action="{{ action('Admin\ClientController@edit',['id' => $client->id]) }}" method="get">
         {{  csrf_field()}}
-        <input type="submit" class="btn btn-primary" value="詳細">
+        <input type="submit" class="btn btn-primary" value="編集">
       </form>
     </div>
   </div>

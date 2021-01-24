@@ -10914,21 +10914,21 @@ a.text-dark:focus {
 
 .human_figure_block {
   width: 300px;
-  height: auto;
+  height: 340px;
   position: relative;
 }
 
 .human_figure_block .Head {
   width: 32px;
   height: 20px;
-  top: 0px;
+  top: 0;
   left: 57px;
 }
 
 .human_figure_block .Head_2 {
   width: 32px;
   height: 20px;
-  top: 0px;
+  top: 0;
   left: 211px;
 }
 
@@ -11083,7 +11083,7 @@ a.text-dark:focus {
   width: 25px;
   height: 30px;
   top: 166px;
-  left: 0px;
+  left: 0;
 }
 
 .human_figure_block .Righthand_2 {

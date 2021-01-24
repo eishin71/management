@@ -12,7 +12,6 @@
             {{ $answer->answer }}
           </div>
           @endforeach
-          <p></p>
           <div class="form-group row">
             <label class="col-md-4">コース</label>
             <div class="col-md-8">
@@ -141,6 +140,13 @@
                 <div class="human_figure_part Leftleg_2"></div>
                 @endif
             </div>
+          </div>
+          <div class="form-group row">
+            <form action="{{ action('Admin\MedicalHistoryController@edit',
+            ['client_id' => $treatment->client_id, 'answer_date' => $answer->answer_date]) }}" method="get">
+              {{  csrf_field()}}
+              <input type="submit" class="btn btn-primary" value="編集">
+            </form>
           </div>
         </div>
       </div>

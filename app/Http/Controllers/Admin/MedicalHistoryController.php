@@ -83,13 +83,20 @@ class MedicalHistoryController extends Controller
         return view('admin.medicalhistory.show', [ 'answers' => $answers,'answer_date' => $answer_date,'treatment' => $treatment ]);
     }
 
-    public function edit(Request $request, $id)
+    public function edit(Request $request, $client_id, $answer_date)
     {
-        $answer = Answer::find($id);
+        $answers = Answer::where('client_id', $client_id)
+                   ->where('answer_date', $answer_date)
+                   ->get();
+        $answer_date = new Carbon($answer_date);
+
+        $treatment = Treatment::where('client_id', $client_id)
+                        ->where('treatment_date', $answer_date)
+                        ->first();
         if (empty($answer)) {
             abort(404);
         }
-        return view('admin.medicalhistory.edit', ['answer' => $answer,'id' => $id]);
+        return view('admin.medicalhistory.edit', [ 'answers' => $answers,'answer_date' => $answer_date,'treatment' => $treatment ]);
     }
 
     public function details(Request $request, $id)
@@ -100,15 +107,25 @@ class MedicalHistoryController extends Controller
 
     public function update(Request $request, $id)
     {
-        $form = $request->all();
-        foreach ($form['answer'] as $question_id => $answer_text) {
-            $answer = new Answer;
-            $answer->answer_date = $form['answer_date'];
-            $answer->question_id = $question_id;
-            $answer->client_id = $form['client_id'];
-            $answer->answer = $answer_text;
-            $answer->save();
-        }
-        return redirect()->action('Admin\ClientController@show', ['id' => $form['client_id']]);
+      $form = $request->all();
+      //フォームから入力した全てを受け取る
+      foreach ($form['answer'] as $question_id => $answer_text) {
+          $answer = new Answer;
+          $answer->answer_date = $form['answer_date'];
+          $answer->question_id = $question_id;
+          $answer->client_id = $form['client_id'];
+          $answer->answer = $answer_text;
+          $answer->save();
+      }
+      $treatment = new Treatment;
+      $treatment->course_id = $form['course_id'];
+      //値をjson形式に配列を文字列に変換する
+      $treatment->part = json_encode($form['part']);
+      $treatment->treatment = $form['treatment'];
+      $treatment->treatment_date = $form['answer_date'];
+      $treatment->client_id = $form['client_id'];
+      $treatment->save();
+
+      return view('admin.medicalhistory.index', ['answers' => $answers,'clients' => $clients,'answer_date_array' => $answer_date_array,'answer' => $answer,'client_id' => $id]);
     }
 }
