@@ -142,11 +142,8 @@
             </div>
           </div>
           <div class="form-group row">
-            <form action="{{ action('Admin\MedicalHistoryController@edit',
-            ['client_id' => $treatment->client_id, 'answer_date' => $answer->answer_date]) }}" method="get">
-              {{  csrf_field()}}
-              <input type="submit" class="btn btn-primary" value="編集">
-            </form>
+            <a href="{{ action('Admin\MedicalHistoryController@edit',
+            ['client_id' => $treatment->client_id,'treatment_date' => $answer_date->format('Ymd')]) }}">編集</a>
           </div>
         </div>
       </div>

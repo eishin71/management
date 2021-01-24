@@ -93,9 +93,6 @@ class MedicalHistoryController extends Controller
         $treatment = Treatment::where('client_id', $client_id)
                         ->where('treatment_date', $answer_date)
                         ->first();
-        if (empty($answer)) {
-            abort(404);
-        }
         return view('admin.medicalhistory.edit', [ 'answers' => $answers,'answer_date' => $answer_date,'treatment' => $treatment ]);
     }
 
