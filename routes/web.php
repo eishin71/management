@@ -57,7 +57,7 @@ Route::group(['prefix' => 'admin','middleware' => ['auth', 'can:admin']], functi
     Route::get('medicalhistory/{client_id}/{answer_date}', 'Admin\MedicalHistoryController@show');
     Route::get('medicalhistory/{client_id}/{answer_date}/edit', 'Admin\MedicalHistoryController@edit');
     Route::get('medicalhistory/{client_id}/{answer_date}/details', 'Admin\MedicalHistoryController@details');
-    Route::get('medicalhistory/{client_id}/{answer_date}/update', 'Admin\MedicalHistoryController@update');
+    Route::post('medicalhistory/{client_id}/{answer_date}/update', 'Admin\MedicalHistoryController@update');
 });
 
 
