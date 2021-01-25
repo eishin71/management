@@ -90,7 +90,7 @@ class MedicalHistoryController extends Controller
 
         $answers = Answer::where('client_id', $client_id)
                    ->where('answer_date', $answer_date)
-                   ->first();
+                   ->get();
         $answer_date = new Carbon($answer_date);
 
         $treatment = Treatment::where('client_id', $client_id)
