@@ -105,7 +105,7 @@ class MedicalHistoryController extends Controller
         return view('admin.medicalhistory.details', ['answer' => $answer,'id' => $id]);
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, $client_id, $answer_date)
     {
         $form = $request->all();
         //フォームから入力した全てを受け取る
@@ -126,6 +126,6 @@ class MedicalHistoryController extends Controller
         $treatment->client_id = $form['client_id'];
         $treatment->save();
 
-        return view('admin.medicalhistory.show', [ 'answers' => $answers,'answer_date' => $answer_date,'treatment' => $treatment ]);
+        return view('admin.medicalhistory.show', [ 'answer' => $answer,'answer_date' => $answer_date,'treatment' => $treatment ]);
     }
 }
