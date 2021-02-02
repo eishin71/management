@@ -4,9 +4,9 @@
 <div class="container">
   <h2>問診票編集画面</h2>
   <form action="{{ action('Admin\MedicalHistoryController@update',
-  ['client_id' => $answer->client_id,'answer_date' => $answer->answer_date->format('Ymd')]) }}" method="post">
+  ['client_id' => $client_id,'answer_date' => $answer_date->format('Ymd')]) }}" method="post">
     <div class="form-group row">
-      <input type="hidden" name="client_id" value="{{ $answer->client_id }}">
+      <input type="hidden" name="client_id" value="{{ $client_id }}">
     </div>
     <div class="form-group row">
       <label class="col-md-2">来店日</label>
