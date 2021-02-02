@@ -5,10 +5,9 @@
     <div class="container">
       <div class="row">
         <div class="col-md-8 mx-auto">
-          <h2>Pure＋　予約フォーム</h2>
+          <h2>Pure＋ 予約フォーム</h2>
           <form action="{{ action('ReservationController@confirm') }}"
           method="post" enctype="multipart/form-data">
-
             @if (count($errors) > 0)
               <div class="alert alert-danger" role="alert">
                 <ul>
@@ -65,7 +64,7 @@
             <div class="form-group row">
               <label class="col-md-2">コース</label>
               <div class="col-md-10">
-                <select　name="course_id">
+                <select name="course_id">
                   <option value="">コースを選択してください</option>
                   @foreach ($courses as $c)
                     <option value="{{ $c->id}}">{{ $c->name }}</option>

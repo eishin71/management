@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Question extends Model
 {
-  protected $guarded = array('id');
+    protected $guarded = array('id');
 
-  public static $rules = array(
+    public static $rules = array(
     'question' => 'required',
   );
 }

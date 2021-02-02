@@ -4,11 +4,14 @@
 <div class="container">
   <h2>問診票編集画面</h2>
   <form action="{{ action('Admin\MedicalHistoryController@update',
-  ['client_id' => $answers->client_id,'answer_date' => $answers->answer_date->format('Ymd')]) }}" method="post">
+  ['client_id' => $answer->client_id,'answer_date' => $answer->answer_date->format('Ymd')]) }}" method="post">
+    <div class="form-group row">
+      <input type="hidden" name="client_id" value="{{ $answer->client_id }}">
+    </div>
     <div class="form-group row">
       <label class="col-md-2">来店日</label>
       <div class="col-md-10">
-        <input type="date" class="form-control" name="answer_date" value="{{ $answer->answer_dater->format('Y-m-d') }}">
+        <input type="date" class="form-control" name="answer_date" value="{{ $answer_date->format('Y-m-d') }}">
       </div>
     </div>
     @foreach ($questions as $q)
@@ -27,11 +30,12 @@
     <div class="form-group row">
       <label class="col-md-2">コース</label>
       <div class="col-md-10">
-        <select　name="course_id">
+        <select name="course_id">
           <option value="">コースを選択してください</option>
           @foreach ($courses as $c)
             <option value="{{ $c->id}}"{{ $treatment->course_id == $c->id ? 'selected' : '' }} >{{ $c->name }}</option>
           @endforeach
+        </select>
       </div>
     </div>
     <div class="form-group row">
@@ -40,42 +44,42 @@
           <label>
             <input type="checkbox" name="part[]" value="頭"
             @if (in_array("頭",$treatment->decode_part()))
-            　　　checked = "checked"
+               checked = "checked"
             @endif
             >頭
           </label>
           <label>
             <input type="checkbox" name="part[]" value="首"
             @if (in_array("首",$treatment->decode_part()))
-            　　　checked = "checked"
+               checked = "checked"
             @endif
             >首
           </label>
           <label>
             <input type="checkbox" name="part[]" value="右肩"
             @if (in_array("右肩",$treatment->decode_part()))
-            　　　checked="checked"
+               checked="checked"
             @endif
             >右肩
           </label>
           <label>
             <input type="checkbox" name="part[]" value="左肩"
             @if (in_array("左肩",$treatment->decode_part()))
-            　　　checked="checked"
+               checked="checked"
             @endif
             >左肩
           </label>
           <label>
             <input type="checkbox" name="part[]" value="右肩甲骨"
             @if (in_array("右肩甲骨",$treatment->decode_part()))
-            　　　checked="checked"
+               checked="checked"
             @endif
             >右肩甲骨
           </label>
           <label>
             <input type="checkbox" name="part[]" value="左肩甲骨"
             @if (in_array("左肩甲骨",$treatment->decode_part()))
-            　　　checked="checked"
+               checked="checked"
             @endif
             >左肩甲骨
           </label>

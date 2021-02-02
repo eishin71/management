@@ -11,7 +11,6 @@
               <a href="{{ action('Admin\QuestionController@index') }}">質問一覧</a>
             </div>
           </div>
-          <p></p>
           <div class="form-group row">
             <label class="col-md-2">質問内容</label>
             <div class="col-md-10">

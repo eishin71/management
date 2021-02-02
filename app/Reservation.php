@@ -12,10 +12,7 @@ class Reservation extends Model
 
     protected $dates = [
       'start_date',
-
     ];
-
-
 
     public static function rules($start_date, $course_id)
     {

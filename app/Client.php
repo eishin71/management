@@ -7,13 +7,13 @@ use Carbon\Carbon;
 
 class Client extends Model
 {
-  protected $guarded = array('id');
+    protected $guarded = array('id');
 
-  protected $dates = [
+    protected $dates = [
     'birthday'
   ];
 
-  public static $rules = array(
+    public static $rules = array(
     'name' => '',
     'sex' => '',
     'job' => '',

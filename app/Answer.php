@@ -7,20 +7,21 @@ use Carbon\Carbon;
 
 class Answer extends Model
 {
-  protected $guarded = array('id');
+    protected $guarded = array('id');
 
-  protected $dates = [
+    protected $dates = [
     'answer_date'
   ];
 
-  public static $rules = array(
+    public static $rules = array(
     'answer_date' => '',
     'answer' => '',
     'client_id' => '',
     'question_id' => '',
   );
 
-  public function question(){
-    return $this->belongsTo('App\Question');
-  }
+    public function question()
+    {
+        return $this->belongsTo('App\Question');
+    }
 }

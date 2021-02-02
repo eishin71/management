@@ -87,7 +87,9 @@ class MedicalHistoryController extends Controller
     {
         $questions = Question::where('del_flg', false)->get();
         $courses = Course::where('del_flg', false)->get();
-
+        $answer = Answer::where('client_id', $client_id)
+                   ->where('answer_date', $answer_date)
+                   ->first();
         $answers = Answer::where('client_id', $client_id)
                    ->where('answer_date', $answer_date)
                    ->get();
@@ -96,7 +98,7 @@ class MedicalHistoryController extends Controller
         $treatment = Treatment::where('client_id', $client_id)
                         ->where('treatment_date', $answer_date)
                         ->first();
-        return view('admin.medicalhistory.edit', [ 'answers' => $answers,'answer_date' => $answer_date,'treatment' => $treatment,'questions' => $questions,'courses' =>  $courses ]);
+        return view('admin.medicalhistory.edit', [ 'answers' => $answers,'answer_date' => $answer_date,'treatment' => $treatment,'questions' => $questions,'courses' =>  $courses,'answer' => $answer ]);
     }
 
     public function details(Request $request, $id)

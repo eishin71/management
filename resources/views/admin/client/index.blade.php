@@ -38,13 +38,9 @@
                   @endforeach
                 </tbody>
               </table>
-
             </div>
-
           </div>
-
         </div>
-
       </form>
     </div>
   </div>

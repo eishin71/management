@@ -26,20 +26,19 @@
                   <td>{{ ($client->birthday->format('Y/m/d')) }}</td>
                 </tr>
               </tbody>
-
             </table>
             <form action="{{ action('Admin\ClientController@details',['id' => $client->id]) }}" method="get">
               {{  csrf_field()}}
               <input type="submit" class="btn btn-primary" value="詳細">
             </form>
-              <form action="{{ action('Admin\MedicalHistoryController@add',['id' => $client->id]) }}" method="get">
-                {{  csrf_field()}}
-                <input type="submit" class="btn btn-primary" value="問診票の入力">
-              </form>
-              <form action="{{ action('Admin\MedicalHistoryController@index',['id' => $client->id]) }}" method="get">
-                {{  csrf_field()}}
-                <input type="submit" class="btn btn-primary" value="問診票一覧">
-              </form>
+            <form action="{{ action('Admin\MedicalHistoryController@add',['id' => $client->id]) }}" method="get">
+              {{  csrf_field()}}
+              <input type="submit" class="btn btn-primary" value="問診票の入力">
+            </form>
+            <form action="{{ action('Admin\MedicalHistoryController@index',['id' => $client->id]) }}" method="get">
+              {{  csrf_field()}}
+              <input type="submit" class="btn btn-primary" value="問診票一覧">
+            </form>
           </div>
         </div>
       </div>
