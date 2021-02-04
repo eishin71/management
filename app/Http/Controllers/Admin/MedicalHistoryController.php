@@ -109,8 +109,7 @@ class MedicalHistoryController extends Controller
         $form = $request->all();
         //該当するAnswerを取得する
         $target_answers = Answer::where('answer_date', $form['answer_date'])
-                                ->where('client_id', $form['client_id'])
-                                ->get();
+                                ->where('client_id', $form['client_id']);
         //取得したAnswerを削除する
         $target_answers->delete();
         //フォームから入力した全てを受け取る
@@ -122,6 +121,7 @@ class MedicalHistoryController extends Controller
             $answer->answer = $answer_text;
             $answer->save();
         }
+        $answer_date = new Carbon($answer_date);
         //treatmentをupdateする
         $treatment = Treatment::where('client_id', $form['client_id'])
                               ->where('treatment_date', $form['answer_date'])
