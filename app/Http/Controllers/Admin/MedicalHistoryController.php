@@ -135,6 +135,10 @@ class MedicalHistoryController extends Controller
         $treatment->client_id = $form['client_id'];
         $treatment->save();
 
-        return view('admin.medicalhistory.show', [ 'answer' => $answer,'answer_date' => $answer_date,'treatment' => $treatment,'client_id' => $client_id ]);
+        $answers = Answer::where('client_id', $client_id)
+                     ->where('answer_date', $answer_date)
+                     ->get();
+
+        return view('admin.medicalhistory.show', [ 'answer' => $answer,'answer_date' => $answer_date,'treatment' => $treatment,'client_id' => $client_id,'answers' => $answers ]);
     }
 }
