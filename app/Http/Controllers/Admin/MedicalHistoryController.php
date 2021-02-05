@@ -70,11 +70,11 @@ class MedicalHistoryController extends Controller
 
     public function show(Request $request, $client_id, $answer_date)
     {
+        $answer_date = new Carbon($answer_date);
         //複数の条件を指定する方法
         $answers = Answer::where('client_id', $client_id)
                      ->where('answer_date', $answer_date)
                      ->get();
-        $answer_date = new Carbon($answer_date);
 
         $treatment = Treatment::where('client_id', $client_id)
                           ->where('treatment_date', $answer_date)
@@ -107,8 +107,9 @@ class MedicalHistoryController extends Controller
     public function update(Request $request, $client_id, $answer_date)
     {
         $form = $request->all();
+        $answer_date = new Carbon($answer_date);
         //該当するAnswerを取得する
-        $target_answers = Answer::where('answer_date', $form['answer_date'])
+        $target_answers = Answer::where('answer_date', $answer_date)
                                 ->where('client_id', $form['client_id']);
         //取得したAnswerを削除する
         $target_answers->delete();
@@ -121,10 +122,9 @@ class MedicalHistoryController extends Controller
             $answer->answer = $answer_text;
             $answer->save();
         }
-        $answer_date = new Carbon($answer_date);
         //treatmentをupdateする
         $treatment = Treatment::where('client_id', $form['client_id'])
-                              ->where('treatment_date', $form['answer_date'])
+                              ->where('treatment_date', $answer_date)
                               ->first();
 
         $treatment->course_id = $form['course_id'];
