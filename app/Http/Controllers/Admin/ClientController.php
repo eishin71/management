@@ -63,6 +63,6 @@ class ClientController extends Controller
 
         $client->fill($client_form)->save();
 
-        return redirect('admin/client/');
+        return view('admin.client.show', ['client' => $client, 'id' => $id]);
     }
 }

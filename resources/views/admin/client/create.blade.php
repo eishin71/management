@@ -1,5 +1,6 @@
 @extends('layouts.admin')
 @section('title','新規顧客情報登録')
+
 @section('content')
 <div class="container">
     <div class="row">

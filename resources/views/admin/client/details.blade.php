@@ -1,16 +1,13 @@
 @extends('layouts.admin')
 @section('title','顧客詳細')
-@section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-12 mx-auto">
-            <h2>顧客詳細</h2>
-            <div class="form-group row">
-@extends('layouts.admin')
-@section('title','顧客詳細')
 
 @section('content')
 <div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <a href="{{ action('Admin\StartController@index') }}">HOME</a>
+        </div>
+    </div>
     <div class="row">
         <div class="col-md-12 mx-auto">
             <h2>顧客詳細</h2>

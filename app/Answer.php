@@ -10,15 +10,15 @@ class Answer extends Model
     protected $guarded = array('id');
 
     protected $dates = [
-    'answer_date'
-  ];
+        'answer_date'
+    ];
 
     public static $rules = array(
-    'answer_date' => '',
-    'answer' => '',
-    'client_id' => '',
-    'question_id' => '',
-  );
+        'answer_date' => '',
+        'answer' => '',
+        'client_id' => '',
+        'question_id' => '',
+    );
 
     public function question()
     {

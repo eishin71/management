@@ -7,10 +7,10 @@ use Illuminate\Database\Migrations\Migration;
 class AddDelFlgToCoursesTable extends Migration
 {
     /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+    * Run the migrations.
+    *
+    * @return void
+    */
     public function up()
     {
         Schema::table('courses', function (Blueprint $table) {
@@ -21,10 +21,10 @@ class AddDelFlgToCoursesTable extends Migration
     }
 
     /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+    * Reverse the migrations.
+    *
+    * @return void
+    */
     public function down()
     {
         Schema::table('courses', function (Blueprint $table) {

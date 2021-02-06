@@ -7,10 +7,10 @@ use Illuminate\Database\Migrations\Migration;
 class StatusTable extends Migration
 {
     /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+    * Run the migrations.
+    *
+    * @return void
+    */
     public function up()
     {
         Schema::table('reservations', function (Blueprint $table) {
@@ -19,10 +19,10 @@ class StatusTable extends Migration
     }
 
     /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+    * Reverse the migrations.
+    *
+    * @return void
+    */
     public function down()
     {
         Schema::table('reservations', function (Blueprint $table) {

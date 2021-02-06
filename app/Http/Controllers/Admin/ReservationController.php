@@ -80,8 +80,8 @@ class ReservationController extends Controller
     public function schedule(Request $requeset)
     {
         $reservation = Reservation::where('status', '予約確定')
-                                ->where('start_date', '>=', Carbon::today())
-                                ->orderBy('start_date', 'asc')->get();
+        ->where('start_date', '>=', Carbon::today())
+        ->orderBy('start_date', 'asc')->get();
         return view('admin.reservation.schedule', ['reservation' => $reservation]);
     }
 }

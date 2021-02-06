@@ -9,6 +9,6 @@ class Question extends Model
     protected $guarded = array('id');
 
     public static $rules = array(
-    'question' => 'required',
-  );
+        'question' => 'required',
+    );
 }

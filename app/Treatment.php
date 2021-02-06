@@ -11,8 +11,8 @@ class Treatment extends Model
     protected $guarded = array('id');
 
     protected $dates = [
-    'treatment_date'
-  ];
+        'treatment_date'
+    ];
 
     public function course()
     {
@@ -26,10 +26,10 @@ class Treatment extends Model
     }
 
     public static $rules = array(
-    'course' => '',
-    'part' => '',
-    'treatment' => '',
-    'treatment_date' => '',
-    'client_id' => '',
-  );
+        'course' => '',
+        'part' => '',
+        'treatment' => '',
+        'treatment_date' => '',
+        'client_id' => '',
+    );
 }

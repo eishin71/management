@@ -11,10 +11,10 @@
 |
 */
 
-  Route::get('reservation/create', 'ReservationController@add');
-  Route::post('reservation/create', 'ReservationController@create');
-  Route::get('reservation/confirm', 'ReservationController@add');
-  Route::post('reservation/confirm', 'ReservationController@confirm');
+Route::get('reservation/create', 'ReservationController@add');
+Route::post('reservation/create', 'ReservationController@create');
+Route::get('reservation/confirm', 'ReservationController@add');
+Route::post('reservation/confirm', 'ReservationController@confirm');
 
 Route::group(['prefix' => 'admin','middleware' => ['auth', 'can:admin']], function () {
     Route::get('start/', 'Admin\StartController@index');

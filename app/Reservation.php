@@ -11,21 +11,21 @@ class Reservation extends Model
     protected $guarded = array('id');
 
     protected $dates = [
-      'start_date',
+        'start_date',
     ];
 
     public static function rules($start_date, $course_id)
     {
         return array(
-      'name' => 'required',
-      'sex' => 'required',
-      'age' => 'required',
-      'phonenumber' => 'required',
-      'mail' => 'required',
-      'start_date' => ['required', new ReservationRule($start_date, $course_id)],
-      'course_id' => 'required',
-      'symptom' => '',
-      );
+            'name' => 'required',
+            'sex' => 'required',
+            'age' => 'required',
+            'phonenumber' => 'required',
+            'mail' => 'required',
+            'start_date' => ['required', new ReservationRule($start_date, $course_id)],
+            'course_id' => 'required',
+            'symptom' => '',
+        );
     }
 
     public static function calcEndDate($start_date, $course_id)

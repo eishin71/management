@@ -73,12 +73,12 @@ class MedicalHistoryController extends Controller
         $answer_date = new Carbon($answer_date);
         //複数の条件を指定する方法
         $answers = Answer::where('client_id', $client_id)
-                     ->where('answer_date', $answer_date)
-                     ->get();
+        ->where('answer_date', $answer_date)
+        ->get();
 
         $treatment = Treatment::where('client_id', $client_id)
-                          ->where('treatment_date', $answer_date)
-                          ->first();
+        ->where('treatment_date', $answer_date)
+        ->first();
 
         return view('admin.medicalhistory.show', [ 'answers' => $answers,'answer_date' => $answer_date,'treatment' => $treatment ]);
     }
@@ -88,13 +88,13 @@ class MedicalHistoryController extends Controller
         $questions = Question::where('del_flg', false)->get();
         $courses = Course::where('del_flg', false)->get();
         $answers = Answer::where('client_id', $client_id)
-                   ->where('answer_date', $answer_date)
-                   ->get();
+        ->where('answer_date', $answer_date)
+        ->get();
         $answer_date = new Carbon($answer_date);
 
         $treatment = Treatment::where('client_id', $client_id)
-                        ->where('treatment_date', $answer_date)
-                        ->first();
+        ->where('treatment_date', $answer_date)
+        ->first();
         return view('admin.medicalhistory.edit', [ 'answers' => $answers,'answer_date' => $answer_date,'treatment' => $treatment,'questions' => $questions,'courses' =>  $courses,'client_id' => $client_id ]);
     }
 
@@ -110,7 +110,7 @@ class MedicalHistoryController extends Controller
         $answer_date = new Carbon($answer_date);
         //該当するAnswerを取得する
         $target_answers = Answer::where('answer_date', $answer_date)
-                                ->where('client_id', $form['client_id']);
+        ->where('client_id', $form['client_id']);
         //取得したAnswerを削除する
         $target_answers->delete();
         //フォームから入力した全てを受け取る
@@ -124,8 +124,8 @@ class MedicalHistoryController extends Controller
         }
         //treatmentをupdateする
         $treatment = Treatment::where('client_id', $form['client_id'])
-                              ->where('treatment_date', $answer_date)
-                              ->first();
+        ->where('treatment_date', $answer_date)
+        ->first();
 
         $treatment->course_id = $form['course_id'];
         //値をjson形式に配列を文字列に変換する
@@ -136,8 +136,8 @@ class MedicalHistoryController extends Controller
         $treatment->save();
 
         $answers = Answer::where('client_id', $client_id)
-                     ->where('answer_date', $answer_date)
-                     ->get();
+        ->where('answer_date', $answer_date)
+        ->get();
 
         return view('admin.medicalhistory.show', [ 'answer' => $answer,'answer_date' => $answer_date,'treatment' => $treatment,'client_id' => $client_id,'answers' => $answers ]);
     }
