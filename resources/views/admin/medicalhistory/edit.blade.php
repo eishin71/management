@@ -11,9 +11,8 @@
     </div>
     <div class="form-group row">
         <label class="col-md-2">来店日</label>
-        <div class="col-md-10">
-            <input type="date" class="form-control" name="answer_date" value="{{ $answer_date->format('Y-m-d') }}">
-        </div>
+        <h4>{{ $answer_date->format('Y年m月d日') }}</h4>
+        <input type="hidden" name="answer_date" value="{{ $answer_date->format('Y-m-d') }}">
     </div>
     @foreach ($questions as $q)
     <?php $answer = $answers->where('question_id', $q->id)->first(); ?>
@@ -255,6 +254,10 @@
     </div>
     {{ csrf_field() }}
     <input type="submit" class="btn btn-primary" value="更新">
+    </form>
+    <form action="{{ action('Admin\MedicalHistoryController@remove',['client_id' => $client_id,'answer_date' => $answer_date->format('Ymd')]) }}" method="post">
+        {{ csrf_field() }}
+        <input type="submit" class="btn btn-danger" value="削除">
     </form>
 </div>
 @endsection

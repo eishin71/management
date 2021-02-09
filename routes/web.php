@@ -43,6 +43,8 @@ Route::group(['prefix' => 'admin','middleware' => ['auth', 'can:admin']], functi
     Route::get('client/{id}/details', 'Admin\ClientController@details');
     Route::post('client/{id}/update', 'Admin\ClientController@update');
     Route::get('client/{id}', 'Admin\ClientController@show');
+    Route::post('client/{id}/remove', 'Admin\ClientController@remove');
+
 
     Route::get('question/create', 'Admin\QuestionController@add');
     Route::post('question/create', 'Admin\QuestionController@create');
@@ -56,8 +58,9 @@ Route::group(['prefix' => 'admin','middleware' => ['auth', 'can:admin']], functi
     Route::get('medicalhistory/{id}', 'Admin\MedicalHistoryController@index');
     Route::get('medicalhistory/{client_id}/{answer_date}', 'Admin\MedicalHistoryController@show');
     Route::get('medicalhistory/{client_id}/{answer_date}/edit', 'Admin\MedicalHistoryController@edit');
-    Route::get('medicalhistory/{client_id}/{answer_date}/details', 'Admin\MedicalHistoryController@details');
     Route::post('medicalhistory/{client_id}/{answer_date}/update', 'Admin\MedicalHistoryController@update');
+    Route::post('medicalhistory/{client_id}/{answer_date}/remove', 'Admin\MedicalHistoryController@remove');
+
 });
 
 

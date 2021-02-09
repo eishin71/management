@@ -67,18 +67,19 @@
                     <select name="course_id">
                         <option value="">コースを選択してください</option>
                         @foreach ($courses as $c)
-                        <option value="{{ $c->id}}">{{ $c->name }}</option>
+                        <option value="{{ $c->id }}">{{ $c->name }}</option>
                         @endforeach
-                    </div>
+                    </select>
                 </div>
-                <div class="form-group row">
-                    <label class="col-md-2">症状</label>
-                    <div class="col-md-10">
-                        <textarea class="form-control" name="symptom" rows="20">{{ old('symptom') }}</textarea>
-                    </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-2">症状</label>
+                <div class="col-md-10">
+                    <textarea class="form-control" name="symptom" rows="20">{{ old('symptom') }}</textarea>
                 </div>
-                {{ csrf_field() }}
-                <input type="submit" class="btn btn-primary" value="送信">
+            </div>
+            {{ csrf_field() }}
+            <input type="submit" class="btn btn-primary" value="送信">
             </form>
         </div>
     </div>

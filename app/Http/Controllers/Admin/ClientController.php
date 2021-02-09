@@ -65,4 +65,12 @@ class ClientController extends Controller
 
         return view('admin.client.show', ['client' => $client, 'id' => $id]);
     }
+
+    public function remove(Request $request,$id)
+    {
+        $client = Client::find($id)->delete();
+
+        return redirect()->action('Admin\ClientController@index');
+
+    }
 }

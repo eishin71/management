@@ -12,15 +12,15 @@
     <form action="{{ action('Admin\MedicalHistoryController@create') }}" method="post">
         <input type="hidden" name="client_id" value="{{ $id }}">
         <div class="form-group row">
-            <label class="col-md-2">来店日</label>
-            <div class="col-md-10">
+            <label class="col-md-3">来店日</label>
+            <div class="col-md-9">
                 <input type="date" class="form-control" name="answer_date" value="{{ old('answer_date') }}">
             </div>
         </div>
         @foreach ($questions as $q)
         <div class="form-group row">
-            <label class="col-md-2" value="{{ $q->id }}">{{ $q->question }}</label>
-            <div class="col-md-10">
+            <label class="col-md-3" value="{{ $q->id }}">{{ $q->question }}</label>
+            <div class="col-md-9">
                 <select name="answer[{{ $q->id }}]">
                     <option value=""></option>
                     <option value="はい">はい</option>
@@ -30,8 +30,8 @@
         </div>
         @endforeach
         <div class="form-group row">
-            <label class="col-md-2">コース</label>
-            <div class="col-md-10">
+            <label class="col-md-3">コース</label>
+            <div class="col-md-9">
                 <select name="course_id">
                     <option value="">コースを選択してください</option>
                     @foreach ($courses as $c)
@@ -41,8 +41,8 @@
             </div>
         </div>
         <div class="form-group row">
-            <label class="col-md-2">施術箇所</label>
-            <div class="col-md-10">
+            <label class="col-md-3">施術箇所</label>
+            <div class="col-md-9">
                 <label>
                     <input type="checkbox" name="part[]" value="頭">頭
                 </label>
@@ -130,8 +130,8 @@
             </div>
         </div>
         <div class="form-group row">
-            <label class="col-md-2">治療内容</label>
-            <div class="col-md-10">
+            <label class="col-md-3">治療内容</label>
+            <div class="col-md-9">
                 <textarea class="form-control" name="treatment" rows="20">{{ old('treatment') }}</textarea>
             </div>
         </div>

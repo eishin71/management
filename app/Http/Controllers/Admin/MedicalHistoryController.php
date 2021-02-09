@@ -85,6 +85,7 @@ class MedicalHistoryController extends Controller
 
     public function edit(Request $request, $client_id, $answer_date)
     {
+        $form = $request->all();
         $questions = Question::where('del_flg', false)->get();
         $courses = Course::where('del_flg', false)->get();
         $answers = Answer::where('client_id', $client_id)
@@ -95,13 +96,8 @@ class MedicalHistoryController extends Controller
         $treatment = Treatment::where('client_id', $client_id)
         ->where('treatment_date', $answer_date)
         ->first();
-        return view('admin.medicalhistory.edit', [ 'answers' => $answers,'answer_date' => $answer_date,'treatment' => $treatment,'questions' => $questions,'courses' =>  $courses,'client_id' => $client_id ]);
-    }
-
-    public function details(Request $request, $id)
-    {
-        $answer = Answer::find($id);
-        return view('admin.medicalhistory.details', ['answer' => $answer,'id' => $id]);
+        return view('admin.medicalhistory.edit',
+        [ 'answers' => $answers,'answer_date' => $answer_date,'treatment' => $treatment,'questions' => $questions,'courses' =>  $courses,'client_id' => $client_id ]);
     }
 
     public function update(Request $request, $client_id, $answer_date)
@@ -141,4 +137,19 @@ class MedicalHistoryController extends Controller
 
         return view('admin.medicalhistory.show', [ 'answer' => $answer,'answer_date' => $answer_date,'treatment' => $treatment,'client_id' => $client_id,'answers' => $answers ]);
     }
+
+    public function remove(Request $request, $client_id, $answer_date)
+    {
+        //該当するAnswerを取得する
+        Answer::where('answer_date', $answer_date)
+        ->where('client_id', $client_id)
+        ->delete();
+
+        Treatment::where('client_id', $client_id)
+        ->where('treatment_date', $answer_date)
+        ->delete();
+
+        return redirect()->action('Admin\MedicalHistoryController@index',['client_id' => $client_id,'answer_date' => $answer_date]);
+    }
+
 }

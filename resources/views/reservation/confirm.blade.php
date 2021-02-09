@@ -23,7 +23,7 @@
                                 </tr>
                                 <tr>
                                     <th>年齢：</th>
-                                    <td>{{ $form['age'] }}</td>
+                                    <td>{{ $form['age'] }}歳</td>
                                     <input type="hidden" name="age" value="{{ $form['age'] }}">
                                 </tr>
                                 <tr>
@@ -38,12 +38,12 @@
                                 </tr>
                                 <tr>
                                     <th>予約希望日時：</th>
-                                    <td>{{ $form['start_date'] }}</td>
+                                    <td>{{ $date->format('Y年m月d日 H:i') }}</td>
                                     <input type="hidden" name="start_date" value="{{ $form['start_date'] }}">
                                 </tr>
                                 <tr>
                                     <th>コース：</th>
-                                    <td>{{ $form['course_id'] }}</td>
+                                    <td>{{ $c->name }}</td>
                                     <input type="hidden" name="course_id" value="{{ $form['course_id'] }}">
                                 </tr>
                                 <tr>
@@ -59,8 +59,8 @@
                 </form>
                 <form action="{{ action('ReservationController@add') }}"
                 method="get">
-                {{ csrf_field() }}
-                <input type="submit" class="btn btn-danger" value="フォームに戻る">
+                    {{ csrf_field() }}
+                    <input type="submit" class="btn btn-danger" value="フォームに戻る">
                 </form>
             </div>
         </div>

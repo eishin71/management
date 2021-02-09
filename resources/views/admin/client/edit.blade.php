@@ -71,6 +71,10 @@
             {{ csrf_field() }}
             <input type="submit" class="btn btn-primary" value="更新">
         </form>
+        <form action="{{ action('Admin\ClientController@remove',['id' => $client->id]) }}" method="post">
+            {{ csrf_field() }}
+            <input type="submit" class="btn btn-danger" value="削除">
+        </form>
     </div>
 </div>
 @endsection

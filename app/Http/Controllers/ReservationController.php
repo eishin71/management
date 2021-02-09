@@ -40,7 +40,11 @@ class ReservationController extends Controller
     public function confirm(Request $request)
     {
         $form = $request->all();
+        $c = Course::where('del_flg', false)
+                         ->where('id',$form['course_id'])
+                         ->first();
+        $date = new Carbon($form['start_date']);
         $this->validate($request, Reservation::rules($form['start_date'], $form['course_id']));
-        return view('reservation.confirm', ['form' => $form]);
+        return view('reservation.confirm', ['form' => $form,'c' => $c,'date' => $date]);
     }
 }
