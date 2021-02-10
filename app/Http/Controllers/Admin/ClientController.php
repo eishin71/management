@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Client;
+use App\Answer;
+use App\Treatment;
 
 class ClientController extends Controller
 {
@@ -68,6 +70,9 @@ class ClientController extends Controller
 
     public function remove(Request $request,$id)
     {
+        Answer::where('client_id', $id)->delete();
+        Treatment::where('client_id', $id)->delete();
+
         $client = Client::find($id)->delete();
 
         return redirect()->action('Admin\ClientController@index');

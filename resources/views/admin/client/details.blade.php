@@ -8,9 +8,9 @@
             <a href="{{ action('Admin\StartController@index') }}">HOME</a>
         </div>
     </div>
+    <h2>顧客詳細</h2>
     <div class="row">
         <div class="col-md-12 mx-auto">
-            <h2>顧客詳細</h2>
             <div class="form-group row">
                 <label class="col-md-2">氏名</label>
                 <div class="col-md-10">
@@ -59,10 +59,22 @@
                     <p>{{ $client->remarks }}</p>
                 </div>
             </div>
-            <form action="{{ action('Admin\ClientController@edit',['id' => $client->id]) }}" method="get">
-                {{  csrf_field()}}
-                <input type="submit" class="btn btn-primary" value="編集">
-            </form>
+            <div class="form-group row">
+                <div class="col-md-1">
+                    <form action="{{ action('Admin\ClientController@edit',['id' => $client->id]) }}" method="get">
+                        {{  csrf_field()}}
+                        <input type="submit" class="btn btn-primary" value="編集">
+                    </form>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-1">
+                    <form action="{{ action('Admin\ClientController@remove',['id' => $client->id]) }}" method="post">
+                        {{ csrf_field() }}
+                        <input type="submit" class="btn btn-danger" value="削除">
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </div>

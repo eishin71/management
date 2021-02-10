@@ -80,7 +80,7 @@ class MedicalHistoryController extends Controller
         ->where('treatment_date', $answer_date)
         ->first();
 
-        return view('admin.medicalhistory.show', [ 'answers' => $answers,'answer_date' => $answer_date,'treatment' => $treatment ]);
+        return view('admin.medicalhistory.show', [ 'answers' => $answers,'answer_date' => $answer_date,'treatment' => $treatment,'client_id' => $client_id ]);
     }
 
     public function edit(Request $request, $client_id, $answer_date)

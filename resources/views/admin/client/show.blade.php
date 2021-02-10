@@ -10,41 +10,55 @@
     </div>
     <h2>顧客情報</h2>
     <div class="row">
-        <div class="list-client col-sm-5 me-auto">
-            <div class="row">
-                <table class="table table-dark">
-                    <tbody>
-                        <tr>
-                            <th>氏名：</th>
-                            <td>{{ ($client->name) }}</td>
-                        </tr>
-                        <tr>
-                            <th>性別：</th>
-                            <td>{{ ($client->sex) }}</td>
-                        </tr>
-                        <tr>
-                            <th>職業：</th>
-                            <td>{{ ($client->job) }}</td>
-                        </tr>
-                        <tr>
-                            <th>生年月日：</th>
-                            <td>{{ ($client->birthday->format('Y年m月d日')) }}</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <form action="{{ action('Admin\ClientController@details',['id' => $client->id]) }}" method="get">
-                    {{  csrf_field()}}
-                    <input type="submit" class="btn btn-primary" value="詳細">
-                </form>
-                <form action="{{ action('Admin\MedicalHistoryController@add',['id' => $client->id]) }}" method="get">
-                    {{  csrf_field()}}
-                    <input type="submit" class="btn btn-primary" value="問診票の入力">
-                </form>
-                <form action="{{ action('Admin\MedicalHistoryController@index',['id' => $client->id]) }}" method="get">
-                    {{  csrf_field()}}
-                    <input type="submit" class="btn btn-primary" value="問診票一覧">
-                </form>
+        <div class="col-md-12 mx-auto">
+            <div class="form-group row">
+                <label class="col-md-2">氏名</label>
+                <div class="col-md-10">
+                    <P>{{ ($client->name) }}</P>
+                </div>
             </div>
+            <div class="form-group row">
+                <label class="col-md-2">性別</label>
+                <div class="col-md-10">
+                    <P>{{ ($client->sex) }}</P>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-2">職業</label>
+                <div class="col-md-10">
+                    <P>{{ ($client->job) }}</P>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-2">生年月日</label>
+                <div class="col-md-10">
+                    <P>{{ ($client->birthday->format('Y年m月d日')) }}</P>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-1">
+            <form action="{{ action('Admin\ClientController@details',['id' => $client->id]) }}" method="get">
+                {{  csrf_field()}}
+                <input type="submit" class="btn btn-primary" value="詳細">
+            </form>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-1">
+            <form action="{{ action('Admin\MedicalHistoryController@add',['id' => $client->id]) }}" method="get">
+                {{  csrf_field()}}
+                <input type="submit" class="btn btn-primary" value="問診票の入力">
+            </form>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-1">
+            <form action="{{ action('Admin\MedicalHistoryController@index',['id' => $client->id]) }}" method="get">
+                {{  csrf_field()}}
+                <input type="submit" class="btn btn-primary" value="問診票一覧">
+            </form>
         </div>
     </div>
 </div>

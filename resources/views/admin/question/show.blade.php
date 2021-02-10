@@ -15,15 +15,13 @@
     <div class="row">
         <div class="col-md-4">
             @if($question->del_flg == false)
-            <form action="{{ action('Admin\QuestionController@hidden',['id' => $question->id]) }}"
-                method="post" enctype="multipart/form-data">
+            <form action="{{ action('Admin\QuestionController@hidden',['id' => $question->id]) }}" method="post">
                 {{ csrf_field() }}
                 <input type="submit" class="btn btn-danger" value="非表示">
             </form>
             @endif
             @if($question->del_flg != false)
-            <form action="{{ action('Admin\QuestionController@return',['id' => $question->id]) }}"
-                method="post" enctype="multipart/form-data">
+            <form action="{{ action('Admin\QuestionController@return',['id' => $question->id]) }}" method="post">
                 {{ csrf_field() }}
                 <input type="submit" class="btn btn-primary" value="再表示">
             </form>

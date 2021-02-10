@@ -11,8 +11,7 @@
     <div class="row">
         <div class="col-md-12 mx-auto">
             <h2>新規顧客情報登録</h2>
-            <form action="{{ action('Admin\ClientController@create') }}"
-            method="post" enctype="multipart/form-data">
+            <form action="{{ action('Admin\ClientController@create') }}" method="post">
             <div class="form-group row">
                 <label class="col-md-2">氏名</label>
                 <div class="col-md-10">

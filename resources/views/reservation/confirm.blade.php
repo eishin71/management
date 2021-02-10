@@ -4,11 +4,11 @@
 @section('content')
 <div align="center">
     <div class="container">
-        <h2>予約フォーム　確認画面</h2>
+        <h2>予約確認</h2>
         <div class="row">
             <div class="list-reservation col-md-7 mx-auto">
                 <form action="{{ action('ReservationController@create') }}" method="post">
-                    <div class="row">
+                    <div class="form-group row">
                         <table class="table table-dark">
                             <tbody>
                                 <tr>
@@ -57,11 +57,12 @@
                         <input type="submit" class="btn btn-primary" value="送信">
                     </div>
                 </form>
-                <form action="{{ action('ReservationController@add') }}"
-                method="get">
-                    {{ csrf_field() }}
-                    <input type="submit" class="btn btn-danger" value="フォームに戻る">
-                </form>
+                <div class="form-group row">
+                    <form action="{{ action('ReservationController@add') }}" method="get">
+                        {{ csrf_field() }}
+                        <input type="submit" class="btn btn-danger" value="フォームに戻る">
+                    </form>
+                </div>
             </div>
         </div>
     </div>

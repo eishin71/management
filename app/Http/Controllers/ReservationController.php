@@ -34,7 +34,7 @@ class ReservationController extends Controller
         $reservation->symptom = $form['symptom'];
         $reservation->end_date = Reservation::calcEndDate($form['start_date'], $form['course_id']);
         $reservation->save();
-        return view('admin.reservation.receptionist');
+        return view('reservation.receptionist');
     }
 
     public function confirm(Request $request)
@@ -47,4 +47,10 @@ class ReservationController extends Controller
         $this->validate($request, Reservation::rules($form['start_date'], $form['course_id']));
         return view('reservation.confirm', ['form' => $form,'c' => $c,'date' => $date]);
     }
+
+    public function receptionist(Request $request)
+    {
+        return view('reservation.receptionist');
+    }
+
 }

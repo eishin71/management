@@ -255,9 +255,5 @@
     {{ csrf_field() }}
     <input type="submit" class="btn btn-primary" value="更新">
     </form>
-    <form action="{{ action('Admin\MedicalHistoryController@remove',['client_id' => $client_id,'answer_date' => $answer_date->format('Ymd')]) }}" method="post">
-        {{ csrf_field() }}
-        <input type="submit" class="btn btn-danger" value="削除">
-    </form>
 </div>
 @endsection

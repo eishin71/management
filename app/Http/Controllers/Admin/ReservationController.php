@@ -10,11 +10,6 @@ use Carbon\Carbon;
 
 class ReservationController extends Controller
 {
-    public function receptionist(Request $request)
-    {
-        return view('admin.reservation.receptionist');
-    }
-
     public function index(Request $request)
     {
         $cond_title = $request->cond_title;
