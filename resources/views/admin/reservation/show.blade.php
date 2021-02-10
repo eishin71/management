@@ -8,6 +8,11 @@
             <a href="{{ action('Admin\StartController@index') }}">HOME</a>
         </div>
     </div>
+    <div class="row">
+        <div class="col-md-4">
+            <a href="{{ action('Admin\ReservationController@index') }}">戻る</a>
+        </div>
+    </div>
     <h2>予約詳細</h2>
     <div class="row">
         <div class="col-md-12 mx-auto">

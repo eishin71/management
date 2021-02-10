@@ -8,6 +8,11 @@
             <a href="{{ action('Admin\StartController@index') }}">HOME</a>
         </div>
     </div>
+    <div class="row">
+        <div class="col-md-4">
+            <a href="{{ action('Admin\QuestionController@index') }}" >戻る</a>
+        </div>
+    </div>
     <h2>質問編集画面</h2>
     <form action="{{ action('Admin\QuestionController@create') }}" method="post">
         <div class="row">

@@ -3,6 +3,11 @@
 
 @section('content')
 <div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <a href="{{ action('Admin\ClientController@details',['id' => $client->id]) }}">戻る</a>
+        </div>
+    </div>
     <h2>顧客詳細編集画面</h2>
     <form action="{{ action('Admin\ClientController@update',['id' => $client->id]) }}" method="post">
         @if (count($errors) > 0)

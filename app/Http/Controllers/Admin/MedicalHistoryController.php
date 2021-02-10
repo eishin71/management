@@ -18,8 +18,9 @@ class MedicalHistoryController extends Controller
     {
         $questions = Question::where('del_flg', false)->get();
         $courses = Course::where('del_flg', false)->get();
+        $client = Client::find($id);
 
-        return view('admin.medicalhistory.create', compact('questions', 'id', 'courses'));
+        return view('admin.medicalhistory.create', compact('questions', 'id', 'courses','client'));
     }
 
     public function create(Request $request)
@@ -50,6 +51,7 @@ class MedicalHistoryController extends Controller
     {
         $answer = Answer::all();
         $clients = Client::where('id', $id)->get();
+        $client = Client::find($id);
         $answers = Answer::where('client_id', $id)->get();
 
         //配列を初期化
@@ -65,11 +67,13 @@ class MedicalHistoryController extends Controller
             $answer_date_array[$i] = new Carbon($answer_date);
         }
 
-        return view('admin.medicalhistory.index', ['answers' => $answers,'clients' => $clients,'answer_date_array' => $answer_date_array,'answer' => $answer,'client_id' => $id]);
+        return view('admin.medicalhistory.index', ['answers' => $answers,'clients' => $clients,'answer_date_array' => $answer_date_array,'answer' => $answer,'client_id' => $id,'client' => $client]);
     }
 
     public function show(Request $request, $client_id, $answer_date)
     {
+        $id = $client_id;
+        $client = Client::find($id);
         $answer_date = new Carbon($answer_date);
         //複数の条件を指定する方法
         $answers = Answer::where('client_id', $client_id)
@@ -80,7 +84,7 @@ class MedicalHistoryController extends Controller
         ->where('treatment_date', $answer_date)
         ->first();
 
-        return view('admin.medicalhistory.show', [ 'answers' => $answers,'answer_date' => $answer_date,'treatment' => $treatment,'client_id' => $client_id ]);
+        return view('admin.medicalhistory.show', [ 'answers' => $answers,'answer_date' => $answer_date,'treatment' => $treatment,'client_id' => $client_id,'client' => $client ]);
     }
 
     public function edit(Request $request, $client_id, $answer_date)

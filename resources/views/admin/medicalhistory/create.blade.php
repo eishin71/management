@@ -8,6 +8,11 @@
             <a href="{{ action('Admin\StartController@index') }}">HOME</a>
         </div>
     </div>
+    <div class="row">
+        <div class="col-md-4">
+            <a href="{{ action('Admin\ClientController@show',['id' => $client->id]) }}">戻る</a>
+        </div>
+    </div>
     <h2>問診票の入力</h2>
     <form action="{{ action('Admin\MedicalHistoryController@create') }}" method="post">
         <input type="hidden" name="client_id" value="{{ $id }}">

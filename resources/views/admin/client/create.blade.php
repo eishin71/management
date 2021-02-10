@@ -9,6 +9,11 @@
         </div>
     </div>
     <div class="row">
+        <div class="col-md-4">
+            <a href="{{ action('Admin\ClientController@index') }}">戻る</a>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-md-12 mx-auto">
             <h2>新規顧客情報登録</h2>
             <form action="{{ action('Admin\ClientController@create') }}" method="post">
