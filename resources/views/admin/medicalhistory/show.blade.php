@@ -10,7 +10,7 @@
     </div>
     <div class="row">
         <div class="col-md-4">
-            <a href="{{ action('Admin\MedicalHistoryController@index',['id' => $client->id]) }}">戻る</a>
+            <a href="{{ action('Admin\MedicalHistoryController@index',['id' => $client_id]) }}">戻る</a>
         </div>
     </div>
     <h2>問診票</h2>
