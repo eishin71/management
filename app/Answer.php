@@ -20,12 +20,12 @@ class Answer extends Model
         'question_id' => '',
     );
 
-    public static function createAnswers($answers){
-        foreach ($form['answer'] as $question_id => $answer_text) {
+    public static function createAnswers($answers,$answer_date,$client_id){
+        foreach ($answers as $question_id => $answer_text) {
             $answer = new Answer;
-            $answer->answer_date = $form['answer_date'];
+            $answer->answer_date = $answer_date;
             $answer->question_id = $question_id;
-            $answer->client_id = $form['client_id'];
+            $answer->client_id = $client_id;
             $answer->answer = $answer_text;
             $answer->save();
         }

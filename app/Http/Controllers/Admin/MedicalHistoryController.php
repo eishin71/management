@@ -27,8 +27,8 @@ class MedicalHistoryController extends Controller
     {
         $form = $request->all();
         //フォームから入力した全てを受け取る
-        Answer::createAnswers($form['answers']);
-        
+        Answer::createAnswers($form['answer'],$form['answer_date'],$form['client_id']);
+
         $treatment = new Treatment;
         $treatment->course_id = $form['course_id'];
         //値をjson形式に配列を文字列に変換する
