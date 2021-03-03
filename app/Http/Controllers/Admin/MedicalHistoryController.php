@@ -27,7 +27,7 @@ class MedicalHistoryController extends Controller
     {
         $form = $request->all();
         //フォームから入力した全てを受け取る
-        Answer::createAnswers($form['answer'],$form['answer_date'],$form['client_id']);
+        Answer::createAnswers($form['answers'],$form['answer_date'],$form['client_id']);
 
         $treatment = new Treatment;
         $treatment->course_id = $form['course_id'];
@@ -108,14 +108,7 @@ class MedicalHistoryController extends Controller
         //取得したAnswerを削除する
         $target_answers->delete();
         //フォームから入力した全てを受け取る
-        foreach ($form['answer'] as $question_id => $answer_text) {
-            $answer = new Answer;
-            $answer->answer_date = $form['answer_date'];
-            $answer->question_id = $question_id;
-            $answer->client_id = $form['client_id'];
-            $answer->answer = $answer_text;
-            $answer->save();
-        }
+        Answer::createAnswers($form['answers'],$form['answer_date'],$form['client_id']);
         //treatmentをupdateする
         $treatment = Treatment::where('client_id', $form['client_id'])
         ->where('treatment_date', $answer_date)
