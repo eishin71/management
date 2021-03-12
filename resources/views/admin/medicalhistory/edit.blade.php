@@ -19,7 +19,7 @@
     <div class="form-group row">
         <label class="col-md-2" value="{{ $q->id }}">{{ $q->question }}</label>
         <div class="col-md-10">
-            <select name="answer[{{ $q->id }}]">
+            <select name="answers[{{ $q->id }}]">
                 <option value=""></option>
                 <option value="はい" {{ $answer->answer == 'はい' ? 'selected' : '' }}>はい</option>
                 <option value="いいえ" {{ $answer->answer == 'いいえ' ? 'selected' : '' }}>いいえ</option>

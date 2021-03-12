@@ -14,12 +14,13 @@ class Answer extends Model
     ];
 
     public static $rules = array(
-        'answer_date' => '',
+        'answer_dae' => '',
         'answer' => '',
         'client_id' => '',
         'question_id' => '',
     );
 
+    //staticはクラスメソッド
     public static function createAnswers($answers,$answer_date,$client_id){
         foreach ($answers as $question_id => $answer_text) {
             $answer = new Answer;

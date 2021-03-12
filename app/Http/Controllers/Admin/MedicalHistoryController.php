@@ -29,14 +29,9 @@ class MedicalHistoryController extends Controller
         //フォームから入力した全てを受け取る
         Answer::createAnswers($form['answers'],$form['answer_date'],$form['client_id']);
 
+        //Treatmentオブジェクトを生成する（インスタンスの初期化）
         $treatment = new Treatment;
-        $treatment->course_id = $form['course_id'];
-        //値をjson形式に配列を文字列に変換する
-        $treatment->part = json_encode($form['part']);
-        $treatment->treatment = $form['treatment'];
-        $treatment->treatment_date = $form['answer_date'];
-        $treatment->client_id = $form['client_id'];
-        $treatment->save();
+        $treatment->save_from_params($form);
 
         return redirect()->action('Admin\ClientController@show', ['id' => $form['client_id'],'treatment' => $treatment]);
     }
@@ -114,19 +109,14 @@ class MedicalHistoryController extends Controller
         ->where('treatment_date', $answer_date)
         ->first();
 
-        $treatment->course_id = $form['course_id'];
-        //値をjson形式に配列を文字列に変換する
-        $treatment->part = json_encode($form['part']);
-        $treatment->treatment = $form['treatment'];
-        $treatment->treatment_date = $form['answer_date'];
-        $treatment->client_id = $form['client_id'];
-        $treatment->save();
+        //Treatmentオブジェクトを生成する
+        $treatment->save_from_params($form);
 
         $answers = Answer::where('client_id', $client_id)
         ->where('answer_date', $answer_date)
         ->get();
 
-        return view('admin.medicalhistory.show', [ 'answer' => $answer,'answer_date' => $answer_date,'treatment' => $treatment,'client_id' => $client_id,'answers' => $answers ]);
+        return redirect()->action('Admin\ClientController@show', ['id' => $form['client_id'],'treatment' => $treatment]);
     }
 
     public function remove(Request $request, $client_id, $answer_date)

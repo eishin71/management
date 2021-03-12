@@ -32,4 +32,17 @@ class Treatment extends Model
         'treatment_date' => '',
         'client_id' => '',
     );
+
+    //インスタンスメソッド
+    public function save_from_params($params){
+        $this->course_id = $params['course_id'];
+        //値をjson形式に配列を文字列に変換する
+        $this->part = json_encode($params['part']);
+        $this->treatment = $params['treatment'];
+        $this->treatment_date = $params['answer_date'];
+        $this->client_id = $params['client_id'];
+        $this->save();
+        //$thisはオブジェクト自身を指す
+
+    }
 }
