@@ -35,9 +35,34 @@ class UserTest extends TestCase
       $response->assertStatus(200);
     }
 
-    public function testBasicTest()
+    public function testReservationCreate()
     {
-      $a = 5;
-      $this->assertFalse($a == 10);
+        $response = $this->get('/reservation/create');
+        $response->assertStatus(302);
+        $response->assertRedirect('/login');
     }
+
+    public function testReservationCreateLogged()
+    {
+        $user = factory(User::class)->create();
+        $response = $this->actingAs($user)->get('/reservation/create');
+        $response->assertStatus(200);
+    }
+
+    public function testAdminReservation()
+    {
+        $response = $this->get('/admin/reservation');
+        $response->assertStatus(302);
+        $response->assertRedirect('/login');
+
+    }
+
+    public function testAdminReservationLogged()
+    {
+        $user = factory(User::class)->create();
+        $response = $this->actingAs($user)->get('/admin/reservation');
+        $response->assertStatus(200);
+    }
+
+
 }
