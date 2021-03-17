@@ -38,8 +38,7 @@ class UserTest extends TestCase
     public function testReservationCreate()
     {
         $response = $this->get('/reservation/create');
-        $response->assertStatus(302);
-        $response->assertRedirect('/login');
+        $response->assertStatus(200);
     }
 
     public function testReservationCreateLogged()
@@ -61,7 +60,7 @@ class UserTest extends TestCase
     {
         $user = factory(User::class)->create();
         $response = $this->actingAs($user)->get('/admin/reservation');
-        $response->assertStatus(200);
+        $response->assertStatus(403);
     }
 
 
