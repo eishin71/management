@@ -56,12 +56,42 @@ class UserTest extends TestCase
 
     }
 
-    public function testAdminReservationLogged()
+    public function testAdminReservationLoggedAdmin()
     {
         $user = factory(User::class)->create();
         $response = $this->actingAs($user)->get('/admin/reservation');
-        $response->assertStatus(403);
+        $response->assertStatus(200);
     }
 
+    public function testAdminReservationLoggedNotAdmin()
+    {
+        $user = factory(User::class)->create();
+        $user->role = 0;
+        $response = $this->actingAs($user)->get('/admin/reservation');
+        $response->assertStatus(403);
+    }
+//顧客一覧のテスト
+    public function testAdminClient()
+    {
+        $response = $this->get('/admin/client');
+        $response->assertStatus(302);
+        $response->assertRedirect('/login');
+
+    }
+
+    public function testAdminClientLoggedAdmin()
+    {
+        $user = factory(User::class)->create();
+        $response = $this->actingAs($user)->get('/admin/client');
+        $response->assertStatus(200);
+    }
+
+    public function testAdminClientLoggedNotAdmin()
+    {
+        $user = factory(User::class)->create();
+        $user->role = 0;
+        $response = $this->actingAs($user)->get('/admin/client');
+        $response->assertStatus(403);
+    }
 
 }
