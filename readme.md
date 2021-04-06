@@ -1,14 +1,15 @@
 # 予約状況・顧客管理ソフト
 
 ## 概要文
-・母が1人で経営している整体での苦労を聞き、楽にしてあげたいという気持ちから整体専用の予約・顧客　管理ソフトを作成しました。
-　【困っている事】
-　・予約が電話のみの為、忙しい時や休日は電話に出れず顧客を取りこぼしている。
-　・顧客情報はパソコンで管理しているが、問診表は紙媒体で毎回ファイルから探している。
+* 母が1人で経営している整体での苦労を聞き、楽にしてあげたいという気持ちから整体専用の予約・顧客管理ソフトを作成しました。
 
-　【改善点】
-　・予約フォームと管理画面を作成し、予約状況を管理できるように。
-　・顧客情報に問診表の情報を紐づけし、過去の施術内容を簡単にみれるように。
+【困っている事】
+* 予約が電話のみの為、忙しい時や休日は電話に出れず顧客を取りこぼしている。
+* 顧客情報はパソコンで管理しているが、問診表は紙媒体で毎回ファイルから探している。
+
+【改善点】
+* 予約フォームと管理画面を作成し、予約状況を管理できるように。
+* 顧客情報に問診表の情報を紐づけし、過去の施術内容を簡単にみれるように。
 
 
 ## 機能
@@ -22,35 +23,35 @@
 
 ## 利用方法
 
-使用するには権限が必要。パスワードが必要
+使用するには管理者権限とパスワードが必要。
 
 ・Home画面
 ![Homeのスクリーンショット](https://i.gyazo.com/c24aa3cf379e05f2a9682058f64979f6.png)
 ・予約フォーム
-https://gyazo.com/a1333f9b2163980e41512b9c80b71b9a
+![予約フォームのスクリーンショット](https://i.gyazo.com/a1333f9b2163980e41512b9c80b71b9a.png)
 ・予約内容の確認画面
-https://gyazo.com/993b4fad05db77042bbad1cd9410d652
+![予約内容の確認画面のスクリーンショット](https://i.gyazo.com/993b4fad05db77042bbad1cd9410d652.png)
 ・予約受付画面
-https://gyazo.com/05c81ed22e797eb9ab7c00da2b0c52b5
+![予約受付画面のスクリーンショット](https://i.gyazo.com/05c81ed22e797eb9ab7c00da2b0c52b5.png)
 ・予約一覧（管理）
-https://gyazo.com/6dce4b9d8959fe13e91fb4f027241dfa
+![予約一覧（管理）のスクリーンショット](https://i.gyazo.com/6dce4b9d8959fe13e91fb4f027241dfa.png)
 ・予約内容確認
-https://gyazo.com/0572d50608492ae58e794d48af703103
+![予約内容確認のスクリーンショット](https://i.gyazo.com/0572d50608492ae58e794d48af703103.png)
 ・施術スケジュール
-https://gyazo.com/339c52b4bd47fda3db4b95c5644b16cb
+![施術スケジュールのスクリーンショット](https://i.gyazo.com/339c52b4bd47fda3db4b95c5644b16cb.png)
 ・施術コース一覧
-https://gyazo.com/c228f74268e5f15a7fef691470d1410c
+![施術コース一覧のスクリーンショット](https://i.gyazo.com/c228f74268e5f15a7fef691470d1410c.png)
 ・問診票質問内容一覧
-https://gyazo.com/5a706d440204e8287bfab7562b8fd853
+![問診票質問内容一覧のスクリーンショット](https://i.gyazo.com/5a706d440204e8287bfab7562b8fd853.png)
 ・新規顧客情報登録画面
-https://gyazo.com/19cf3ab05fc76397a882fb19cfaba21c
+![新規顧客情報登録画面のスクリーンショット](https://i.gyazo.com/19cf3ab05fc76397a882fb19cfaba21c.png)
 ・顧客情報編集画面
-https://gyazo.com/bc0edf2dde06a1cdc2259e2c0bc5d638
-・顧客詳細
-https://gyazo.com/039e3e0c3c072432562d91a2cbb8427e
+![顧客情報編集画面のスクリーンショット](https://i.gyazo.com/bc0edf2dde06a1cdc2259e2c0bc5d638.png)
+・顧客詳細画面
+![顧客詳細画面のスクリーンショット](https://i.gyazo.com/039e3e0c3c072432562d91a2cbb8427e.png)
 ・問診票の入力画面
-https://gyazo.com/9ad15eae5bc9d168b97c59714a2557bb
+![問診票の入力画面のスクリーンショット](https://i.gyazo.com/9ad15eae5bc9d168b97c59714a2557bb.png)](https://gyazo.com/9ad15eae5bc9d168b97c59714a2557bb)
 ・問診表一覧
-https://gyazo.com/831032826f37477b4144636eaaa5957e
+![問診表一覧画面のスクリーンショット](https://i.gyazo.com/831032826f37477b4144636eaaa5957e.png)
 ・問診票
-https://gyazo.com/a3b3986216acf6a5080ca3f73593432b
+![問診票画面のスクリーンショット](https://i.gyazo.com/a3b3986216acf6a5080ca3f73593432b.png)
