@@ -20,10 +20,3 @@ class TreatmentTest extends TestCase
 
     }
 }
-reservationのcalcEnddateのテストメソッドを作る
-
-courseのfactoryを作る
-
-Reservationのテストファイル
-
-test_calcEndDateを作る
