@@ -13,7 +13,7 @@ class Reservation extends Model
     protected $dates = [
         'start_date',
     ];
-
+//クラスメソッドではインスタンスによって値や処理が変化しない
     public static function rules($start_date, $course_id)
     {
         return array(
@@ -27,7 +27,7 @@ class Reservation extends Model
             'symptom' => '',
         );
     }
-
+//メソッドの中身にthisがなければクラスメソッド
     public static function calcEndDate($start_date, $course_id)
     {
         $course = Course::find($course_id);
@@ -41,7 +41,7 @@ class Reservation extends Model
 
         return $end_date;
     }
-
+//メソッドの中身にthisがあればインスタンスメソッド
     public function course()
     {
         return $this->belongsTo('App\Course');
