@@ -26,7 +26,7 @@
 使用するには管理者権限とパスワードが必要。
 
 ・Home画面
-![Homeのスクリーンショット](https://i.gyazo.com/c24aa3cf379e05f2a9682058f64979f6.png)
+![Homeのスクリーンショット](https://i.gyazo.com/dc0bcab60ca431338515989d89b1dc6f.png)
 ・予約フォーム
 ![予約フォームのスクリーンショット](https://i.gyazo.com/a1333f9b2163980e41512b9c80b71b9a.png)
 ・予約内容の確認画面
